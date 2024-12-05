@@ -1,3 +1,5 @@
+`include "apb_pkg.sv"
+
 module apb_master_slave_top (
   input logic pclk,
   input logic preset_n,
@@ -11,60 +13,37 @@ module apb_master_slave_top (
   output logic [31:0] rdata_o // Read data from slave
 );
 
-  // Internal signals for APB interconnection
-  logic psel, penable, pwrite;
-  logic [31:0] paddr, pwdata, prdata;
-  logic pready;
+  import apb_pkg::*;
+  
+  // Declare APB interface
+  apb_interface apb_intf(pclk, preset_n);
 
   // Instantiate the APB master
   apb_add_master u_master (
-    .pclk(pclk),
-    .preset_n(preset_n),
     .add_i(add_i),
     .external_wdata_i(external_wdata_i),
-    .psel_o(psel),
-    .penable_o(penable),
-    .paddr_o(paddr),
-    .pwrite_o(pwrite),
-    .pwdata_o(pwdata),
-    .prdata_i(prdata),
-    .pready_i(pready)
+    .apb_intf(apb_intf)
   );
 
   // Instantiate the APB slave
   apb_add_slave u_slave (
-    .pclk(pclk),
-    .preset_n(preset_n),
-    .psel(psel),
-    .penable(penable),
-    .paddr(paddr),
-    .pwrite(pwrite),
-    .pwdata(pwdata),
-    .prdata(prdata),
-    .pready(pready)
+    .apb_intf(apb_intf)
   );
 
   // Connect outputs
-  assign ready_o = pready;
-  assign rdata_o = prdata;
+  assign ready_o = apb_intf.signals.pready;
+  assign rdata_o = apb_intf.signals.prdata;
 
 endmodule
 
-module apb_add_master (
-  input logic pclk,
-  input logic preset_n,
-  input logic [1:0] add_i, // 2'b00 - NOP, 2'b01 - READ, 2'b11 - WRITE
-  
-  output logic psel_o,
-  output logic penable_o,
-  output logic [31:0] paddr_o,
-  output logic pwrite_o,
-  output logic [31:0] pwdata_o,
-  input logic [31:0] prdata_i,
-  input logic pready_i,
 
-  input logic [31:0] external_wdata_i
+module apb_add_master (
+  input logic [1:0] add_i, // 2'b00 - NOP, 2'b01 - READ, 2'b11 - WRITE
+  input logic [31:0] external_wdata_i,
+  apb_interface apb_intf
 );
+
+  import apb_pkg::*;
 
   typedef enum logic[1:0] {ST_IDLE, ST_SETUP, ST_ACCESS} apb_state_t;
   
@@ -72,8 +51,8 @@ module apb_add_master (
   logic nxt_pwrite, pwrite_q;
   logic [31:0] nxt_rdata, rdata_q;
 
-  always_ff @(posedge pclk or negedge preset_n) begin
-    if (!preset_n) begin
+  always_ff @(posedge apb_intf.pclk or negedge apb_intf.preset_n) begin
+    if (!apb_intf.preset_n) begin
       state_q <= ST_IDLE;
       pwrite_q <= 0;
       rdata_q <= 32'h0;
@@ -98,55 +77,49 @@ module apb_add_master (
       end
       ST_SETUP: nxt_state = ST_ACCESS;
       ST_ACCESS: begin
-        if (pready_i) begin
-          if (!pwrite_q) nxt_rdata = prdata_i;
+        if (apb_intf.signals.pready) begin
+          if (!pwrite_q) nxt_rdata = apb_intf.signals.prdata;
           nxt_state = ST_IDLE;
         end
       end
     endcase
   end
 
-  assign psel_o = (state_q == ST_SETUP) || (state_q == ST_ACCESS);
-  assign penable_o = (state_q == ST_ACCESS);
-  assign paddr_o = {32{psel_o}} & 32'hA000;
-  assign pwrite_o = pwrite_q;
-  assign pwdata_o = external_wdata_i;
+  assign apb_intf.signals.psel = (state_q == ST_SETUP) || (state_q == ST_ACCESS);
+  assign apb_intf.signals.penable = (state_q == ST_ACCESS);
+  assign apb_intf.signals.paddr = (apb_intf.signals.penable) ? SLAVE_ADDR : 32'h0000;
+  assign apb_intf.signals.pwrite = pwrite_q;
+  assign apb_intf.signals.pwdata = external_wdata_i;
 
 endmodule
+
 
 module apb_add_slave (
-  input logic pclk,
-  input logic preset_n,
-  input logic psel,
-  input logic penable,
-  input logic [31:0] paddr,
-  input logic pwrite,
-  input logic [31:0] pwdata,
-  output logic [31:0] prdata,
-  output logic pready
+  apb_interface apb_intf
 );
 
+  import apb_pkg::*;
+
   logic [31:0] register;
-  localparam logic [31:0] SLAVE_ADDR = 32'hA000;
 
-  assign pready = psel && penable;
+  assign apb_intf.signals.pready = apb_intf.signals.psel && apb_intf.signals.penable;
 
-  always_ff @(posedge pclk or negedge preset_n) begin
-    if (!preset_n) begin
+  always_ff @(posedge apb_intf.pclk or negedge apb_intf.preset_n) begin
+    if (!apb_intf.preset_n) begin
       register <= 32'b0;
-    end else if (psel && penable && pwrite && (paddr == SLAVE_ADDR)) begin
-      register <= pwdata;
-      $display("Slave: Write operation. Address: 0x%08h, Data: 0x%08h", paddr, pwdata);
+    end else if (apb_intf.signals.psel && apb_intf.signals.penable && apb_intf.signals.pwrite && (apb_intf.signals.paddr == SLAVE_ADDR)) begin
+      register <= apb_intf.signals.pwdata;
+      $display("Slave: Write operation. Address: 0x%08h, Data: 0x%08h", apb_intf.signals.paddr, apb_intf.signals.pwdata);
     end
   end
 
-  always_ff @(posedge pclk or negedge preset_n) begin
-    if (!preset_n) begin
-      prdata <= 32'b0;
-    end else if (psel && penable && !pwrite && (paddr == SLAVE_ADDR)) begin
-      prdata <= register;
-      $display("Slave: Read operation. Address: 0x%08h, Data: 0x%08h", paddr, register);
+  always_comb begin
+    if (apb_intf.signals.psel && apb_intf.signals.penable && !apb_intf.signals.pwrite && (apb_intf.signals.paddr == SLAVE_ADDR)) begin
+      apb_intf.signals.prdata = register;
+    end else begin
+      apb_intf.signals.prdata = 32'b0; // Default value
     end
   end
 
 endmodule
+

@@ -1,9 +1,35 @@
 m255
 K4
 z2
-!s12c _opt
-Z0 !s99 nomlopt
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R1
 R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+!s12c _opt2
+R1
+!s12c _opt1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
 !s11f vlog 2024.2 2024.05, May 20 2024
 13
 !s112 1.1
@@ -11,132 +37,239 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 d/u/gowthami/ECE571-F24/finalprj-team_16/sim
+Z2 d/u/gowthami/ECE571-F24/finalprj-team_16/sim
 T_opt
-!s110 1733377278
-VMfo]HzZfMI<<n@Ez<_:CJ2
-Z2 04 19 4 work tb_apb_master_slave fast 0
-=1-525400b63b2a-67513cfe-164d8-4a7e
-R0
-Z3 !s12f OEM100
-Z4 !s12b OEM100
-Z5 !s124 OEM100
-Z6 !s135 nogc
+!s110 1733388180
+V;Ed]9h0?5gf`G<66zAIVU1
+Z3 04 19 4 work tb_apb_master_slave fast 0
+=1-525400b63b2a-67516794-6c3b4-609c
+R1
+Z4 !s12f OEM100
+Z5 !s12b OEM100
+Z6 !s124 OEM100
+Z7 !s135 nogc
 o-quiet -auto_acc_if_foreign -work work +acc
-Z7 tCvgOpt 0
+Z8 tCvgOpt 0
 n@_opt
-Z8 OL;O;2024.2;79
+Z9 OL;O;2024.2;79
+vapb__slave_top
+Z10 2/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z12 DXx4 work 7 apb_pkg 0 22 Bd:dfgiSeR6Tb6]<bhZ6l2
+Z13 !s110 1733387168
+!i10b 1
+!s100 hlAd>:@N6zePS`NI7zi8C0
+I=I1bF<cZ5[Bek=B:n>V`l1
+S1
+Z14 d/u/gowthami/ECE571-F24/finalprj-team_16/rtl
+Z15 w1733385643
+Z16 8/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv
+Z17 F/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv
+!i122 27
+Z18 L0 3 35
+Z19 VDg1SIo80bB@j0V0VzS_@n1
+Z20 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z21 !s108 1733387168.000000
+Z22 !s107 apb_pkg.sv|/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv|
+Z23 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv|
+!i113 0
+Z24 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+vapb_add_
+R10
+R11
+R12
+R13
+!i10b 1
+!s100 :2`h5DZ1JE>a^<_3XUQL?1
+I9XC?C:3E]=ajLiDGV`Z1Y3
+S1
+R14
+R15
+R16
+R17
+!i122 27
+Z25 L0 40 55
+R19
+R20
+r1
+!s85 0
+31
+R21
+R22
+R23
+!i113 0
+R24
+R8
 vapb_add_master
-Z9 2/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv
-Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z11 !s110 1733377241
+R10
+R11
+R12
+Z26 !s110 1733388154
 !i10b 1
-!s100 ?^U?91Ihi?I3aZC^L8Ub[2
-I=;k;fek4J7SjCKd2NHM^^1
+!s100 3;8GI[T1A3290RSh>?iDo3
+I;K4;RkCWQU3HCc345MoH?3
 S1
-Z12 d/u/gowthami/ECE571-F24/finalprj-team_16/rtl
-Z13 w1733376429
-Z14 8/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv
-Z15 F/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv
-!i122 0
-L0 53 63
-Z16 VDg1SIo80bB@j0V0VzS_@n1
-Z17 OL;L;2024.2;79
+R14
+Z27 w1733388001
+R16
+R17
+!i122 44
+R25
+R19
+R20
 r1
 !s85 0
 31
-Z18 !s108 1733377240.000000
-Z19 !s107 /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv|
-Z20 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv|
+Z28 !s108 1733388154.000000
+R22
+R23
 !i113 0
-Z21 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R7
+R24
+R8
 vapb_add_slave
-R9
 R10
 R11
-!i10b 1
-!s100 LBNR6;j@g9zoRzRBAXj@W1
-I7G55BlAKzZcmUBZ^Co;4_0
-S1
 R12
-R13
+R26
+!i10b 1
+!s100 Qj]Oo;an=3Ja66Ae0X]_U0
+IKVF<fAHe=8QjGVk2AB5E90
+S1
 R14
-R15
-!i122 0
-L0 117 36
+R27
 R16
 R17
+!i122 44
+L0 97 28
+R19
+R20
 r1
 !s85 0
 31
-R18
+R28
+R22
+R23
+!i113 0
+R24
+R8
+Yapb_interface
+2/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_interface.sv
+R11
+R12
+Z29 !s110 1733388155
+!i10b 1
+!s100 2AO?mM1JEiEHkZ`SjBo2c2
+IfK^M8S8EHSRW?[ObNI`@20
+S1
+R14
+w1733388148
+8/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_interface.sv
+F/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_interface.sv
+!i122 45
+L0 3 0
 R19
 R20
+r1
+!s85 0
+31
+Z30 !s108 1733388155.000000
+!s107 apb_pkg.sv|/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_interface.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_interface.sv|
 !i113 0
-R21
-R7
+R24
+R8
 vapb_master_slave_top
-R9
 R10
 R11
-!i10b 1
-!s100 Zc[c5IO:kgIliR1T9a]9_2
-Ij3zSDfY2I`EUVCO^IAi2=0
-S1
 R12
-R13
+R26
+!i10b 1
+!s100 6KJPGjKzlI4S9P:NEd62S3
+IhioB3ITS@8E[k:<4a``T92
+S1
 R14
-R15
-!i122 0
-L0 1 51
+R27
 R16
 R17
-r1
-!s85 0
-31
+!i122 44
 R18
 R19
 R20
+r1
+!s85 0
+31
+R28
+R22
+R23
 !i113 0
-R21
-R7
-vtb_apb_master_slave
-2/u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv
-R10
+R24
+R8
+Xapb_pkg
+Z31 2/u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv
 R11
+R29
 !i10b 1
-!s100 B>z_`EaGOkFS04Qzd;3DI2
-IzI^=>3_4D@]nhW]JaASTG1
+!s100 9;=zmAQ_8kW56m<lCLD0Z3
+IBd:dfgiSeR6Tb6]<bhZ6l2
 S1
+R14
+w1733387505
+8apb_pkg.sv
+Fapb_pkg.sv
+!i122 47
+L0 1 0
+VBd:dfgiSeR6Tb6]<bhZ6l2
+R20
+r1
+!s85 0
+31
+R30
+Z32 !s107 apb_pkg.sv|/u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv|
+Z33 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv|
+!i113 0
+R24
+R8
+vtb_apb_master_slave
+R31
+R11
 R12
-R13
+R29
+!i10b 1
+!s100 f;AN@@ncl9=7hRNPfiLT42
+IO26iTkY<LOaJfY1TGPh971
+S1
+R14
+w1733388047
 8/u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv
 F/u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv
-!i122 1
-L0 1 87
-R16
-R17
+!i122 47
+L0 3 82
+R19
+R20
 r1
 !s85 0
 31
-!s108 1733377241.000000
-!s107 /u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv|
+R30
+R32
+R33
 !i113 0
-R21
-R7
+R24
+R8
 Ttb_opt
-!s110 1733377263
-VIA310Z]co]nSJk@UB;dN]3
-R2
-R0
+!s110 1733388165
+VAo<RXOPfRCIeo=>k;:0:<0
 R3
+R1
 R4
 R5
 R6
-o
 R7
-ntb_opt
+o
 R8
-R1
+ntb_opt
+R9
+R2

@@ -73,6 +73,16 @@ module tb_apb_master_slave;
     $display("Performing READ operation...");
     perform_read();
 
+    $display("Performing WRITE operation...");
+    perform_write(32'hDEADBEEF);
+
+    $display("Performing READ operation...");
+    perform_read();
+
+    $display("Performing READ operation...");
+    perform_read();
+
+
     #30;
     $stop;
   end
