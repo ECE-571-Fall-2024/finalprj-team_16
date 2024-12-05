@@ -1,0 +1,1 @@
+/pkgs/mentor/questa/2024.2/questasim/linux_x86_64/VisualizerRls/bin/viscom -nolock -quiet -jmem_size 393216 work.tb_apb_master_slave -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt -id 1-525400b63b2a-67513cfe-164d8-4a7e +__design_bin_path+/u/gowthami/ECE571-F24/finalprj-team_16/rtl +__betafsm
