@@ -1,0 +1,3 @@
+BEGIN 3:apb_interface:fast__2:work
+    pwrite :  1:tb_apb:fast:work
+END 

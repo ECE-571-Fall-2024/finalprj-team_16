@@ -1,17 +1,14 @@
-/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb.sv {0 {vlog -work work -vopt -sv -stats=none /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb.sv
+/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb.sv {1 {vlog -work work -vopt -sv -stats=none /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb.sv
 QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling package apb_pkg
+-- Compiling interface apb_interface
 -- Compiling module apb_master_slave_top
--- Importing package apb_pkg
 -- Compiling module apb_add_master
-** Error: (vlog-13069) /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb.sv(51): near "master_signals": syntax error, unexpected IDENTIFIER, expecting ')'.
-
-} {7.0 8.0} {}} /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv {1 {vlog -work work -vopt -sv -stats=none /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv
-QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module tb_apb_master_slave
+-- Importing package apb_pkg
+-- Compiling module apb_add_slave
 
 Top level modules:
-	tb_apb_master_slave
+	apb_master_slave_top
 
 } {} {}} /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb_pkg.sv {1 {vlog -work work -vopt -sv -stats=none /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb_pkg.sv
 QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
