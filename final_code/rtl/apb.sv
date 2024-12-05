@@ -13,10 +13,10 @@ module apb_master_slave_top (
   output logic [31:0] rdata_o         // Read data from slave
 );
 
-  import apb_pkg::*; // Import the package
-
-  // APB signal struct
-  apb_signals_t master_signals, slave_signals;
+  // Internal signals for APB interconnection
+  logic psel, penable, pwrite;
+  logic [31:0] paddr, pwdata, prdata;
+  logic pready;
 
   // Instantiate the APB master
   apb_add_master u_master (
@@ -24,51 +24,71 @@ module apb_master_slave_top (
     .preset_n(preset_n),
     .add_i(add_i),
     .external_wdata_i(external_wdata_i),
-    .master_signals(master_signals),
-    .slave_signals(slave_signals)
+    .psel_o(psel),
+    .penable_o(penable),
+    .paddr_o(paddr),
+    .pwrite_o(pwrite),
+    .pwdata_o(pwdata),
+    .prdata_i(prdata),
+    .pready_i(pready)
   );
 
   // Instantiate the APB slave
   apb_add_slave u_slave (
     .pclk(pclk),
     .preset_n(preset_n),
-    .slave_signals(slave_signals),
-    .master_signals(master_signals)
+    .psel(psel),
+    .penable(penable),
+    .paddr(paddr),
+    .pwrite(pwrite),
+    .pwdata(pwdata),
+    .prdata(prdata),
+    .pready(pready)
   );
 
   // Connect outputs
-  assign ready_o = slave_signals.pready;
-  assign rdata_o = slave_signals.prdata;
+  assign ready_o = pready;
+  assign rdata_o = prdata;
 
 endmodule
 
 module apb_add_master (
   input logic pclk,
   input logic preset_n,
-  input logic [1:0] add_i,              // 2'b00 - NOP, 2'b01 - READ, 2'b11 - WRITE
-  input logic [31:0] external_wdata_i,  // External write data
+  input logic [1:0] add_i,            // 2'b00 - NOP, 2'b01 - READ, 2'b11 - WRITE
+  
+  output logic psel_o,
+  output logic penable_o,
+  output logic [31:0] paddr_o,
+  output logic pwrite_o,
+  output logic [31:0] pwdata_o,
+  input logic [31:0] prdata_i,
+  input logic pready_i,
 
-  output apb_signals_t master_signals,  // APB signals from master
-  input apb_signals_t slave_signals     // APB signals from slave
+  input logic [31:0] external_wdata_i
 );
 
   import apb_pkg::*; // Import the package
 
-  apb_state_t state_q, nxt_state;  // State machine
+  apb_state_t state_q, nxt_state;  // Using typedef for state machine
   logic nxt_pwrite, pwrite_q;
+  logic [31:0] nxt_rdata, rdata_q;
 
   always_ff @(posedge pclk or negedge preset_n) begin
     if (!preset_n) begin
       state_q <= ST_IDLE;
       pwrite_q <= 0;
+      rdata_q <= 32'h0;
     end else begin
       state_q <= nxt_state;
       pwrite_q <= nxt_pwrite;
+      rdata_q <= nxt_rdata;
     end
   end
 
   always_comb begin
     nxt_pwrite = pwrite_q;
+    nxt_rdata = rdata_q;
     nxt_state = state_q;
 
     case (state_q)
@@ -80,51 +100,57 @@ module apb_add_master (
       end
       ST_SETUP: nxt_state = ST_ACCESS;
       ST_ACCESS: begin
-        if (slave_signals.pready) nxt_state = ST_IDLE;
+        if (pready_i) begin
+          if (!pwrite_q) nxt_rdata = prdata_i;
+          nxt_state = ST_IDLE;
+        end
       end
     endcase
   end
 
-  assign master_signals.psel = (state_q == ST_SETUP) || (state_q == ST_ACCESS);
-  assign master_signals.penable = (state_q == ST_ACCESS);
-  assign master_signals.paddr = SLAVE_ADDR;
-  assign master_signals.pwrite = pwrite_q;
-  assign master_signals.pwdata = external_wdata_i;
+  assign psel_o = (state_q == ST_SETUP) || (state_q == ST_ACCESS);
+  assign penable_o = (state_q == ST_ACCESS);
+  assign paddr_o = {32{psel_o}} & SLAVE_ADDR; // Using package constant
+  assign pwrite_o = pwrite_q;
+  assign pwdata_o = external_wdata_i;
 
 endmodule
 
 module apb_add_slave (
   input logic pclk,
   input logic preset_n,
-  
-  output apb_signals_t slave_signals,  // APB signals from slave
-  input apb_signals_t master_signals  // APB signals from master
+  input logic psel,
+  input logic penable,
+  input logic [31:0] paddr,
+  input logic pwrite,
+  input logic [31:0] pwdata,
+  output logic [31:0] prdata,
+  output logic pready
 );
 
   import apb_pkg::*; // Import the package
 
   logic [31:0] register;
 
-  assign slave_signals.pready = master_signals.psel && master_signals.penable;
+  assign pready = psel && penable;
 
   always_ff @(posedge pclk or negedge preset_n) begin
     if (!preset_n) begin
       register <= 32'b0;
-    end else if (master_signals.psel && master_signals.penable && master_signals.pwrite && 
-                 (master_signals.paddr == SLAVE_ADDR)) begin
-      register <= master_signals.pwdata;
-      $display("Slave: Write operation. Address: 0x%08h, Data: 0x%08h", master_signals.paddr, master_signals.pwdata);
+    end else if (psel && penable && pwrite && (paddr == SLAVE_ADDR)) begin
+      register <= pwdata;
+      $display("Slave: Write operation. Address: 0x%08h, Data: 0x%08h", paddr, pwdata);
     end
   end
 
   always_ff @(posedge pclk or negedge preset_n) begin
     if (!preset_n) begin
-      slave_signals.prdata <= 32'b0;
-    end else if (master_signals.psel && master_signals.penable && !master_signals.pwrite && 
-                 (master_signals.paddr == SLAVE_ADDR)) begin
-      slave_signals.prdata <= register;
-      $display("Slave: Read operation. Address: 0x%08h, Data: 0x%08h", master_signals.paddr, register);
+      prdata <= 32'b0;
+    end else if (psel && penable && !pwrite && (paddr == SLAVE_ADDR)) begin
+      prdata <= register;
+      $display("Slave: Read operation. Address: 0x%08h, Data: 0x%08h", paddr, register);
     end
   end
 
 endmodule
+
