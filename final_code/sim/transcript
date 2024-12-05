@@ -1,63 +1,275 @@
 # //  Questa Sim-64
-# //  Version 2024.2 linux_x86_64 May 20 2024
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
 # //
-# // Unpublished work. Copyright 2024 Siemens
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
 # //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
 # //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
-# //
-# Loading project apb_protocol
-# Compile of apb.sv was successful.
-# Compile of tb_apb.sv was successful.
+# Loading project apb_final
+# Compile of apb_interface.sv was successful.
+# Compile of apb_master.sv was successful.
 # Compile of apb_pkg.sv was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -voptargs=+acc work.tb_apb_master_slave
-# vsim -voptargs="+acc" work.tb_apb_master_slave 
-# Start time: 21:47:18 on Dec 04,2024
+# Compile of apb_slave.sv was successful.
+# Compile of apb_top.sv was successful with warnings.
+# Compile of tb_apb.sv was successful with warnings.
+# 6 compiles, 0 failed with no errors.
+# Compile of tb_apb.sv was successful with warnings.
+vopt work.tb_apb -o tb1_opt
+# QuestaSim-64 vopt 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 12:39:37 on Dec 05,2024
+# vopt -reportprogress 300 work.tb_apb -o tb1_opt 
+# 
+# Top level modules:
+# 	tb_apb
+# 
+# Analyzing design...
+# -- Loading module tb_apb
+# -- Loading module apb_master_slave_top
+# -- Loading module apb_add_master
+# -- Importing package apb_pkg
+# -- Loading module apb_add_slave
+# Incremental compilation check found 4 design-units (out of 5) may be reused.
+# Optimizing 1 design-unit (inlining 3/4 module instances):
+# -- Inlining module apb_add_master(fast)
+# -- Inlining module apb_add_slave(fast)
+# -- Inlining module apb_master_slave_top(fast)
+# -- Optimizing module tb_apb(fast)
+# Optimized design name is tb1_opt
+# End time: 12:39:38 on Dec 05,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.tb_apb -voptargs=+acc
+# vsim work.tb_apb -voptargs="+acc" 
+# Start time: 12:39:52 on Dec 05,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
-# Loading work.tb_apb_master_slave(fast)
+# Loading work.tb_apb(fast)
 # Loading work.apb_master_slave_top(fast)
 # Loading work.apb_pkg(fast)
 # Loading work.apb_add_master(fast)
 # Loading work.apb_add_slave(fast)
+add wave -position insertpoint sim:/tb_apb/*
+add wave -position insertpoint  \
+sim:/tb_apb/uut/paddr
 run -all
-# TIME:                   40
 # Performing WRITE operation...
 # Write Data: 0x1234abcd
-# TIME:                   80
 # Performing READ operation...
-# Slave: Write operation. Address: 0x0000a000, Data: 0x1234abcd
 # Read Data: 0x00000000
-# TIME:                  140
-# Slave: Read operation. Address: 0x0000a000, Data: 0x1234abcd
+# Performing another READ operation...
 # Read Data: 0x1234abcd
-# TIME:                  200
 # Performing another WRITE operation...
 # Write Data: 0x5678ef01
-# TIME:                  240
 # Performing another READ operation...
-# Slave: Write operation. Address: 0x0000a000, Data: 0x5678ef01
 # Read Data: 0x00000000
-# TIME:                  300
-# Slave: Read operation. Address: 0x0000a000, Data: 0x5678ef01
+# Performing final READ operation...
 # Read Data: 0x5678ef01
-# ** Note: $stop    : /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv(84)
-#    Time: 330 ns  Iteration: 1  Instance: /tb_apb_master_slave
-# Break in Module tb_apb_master_slave at /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv line 84
+# ** Note: $stop    : /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv(87)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv line 87
 quit -sim
-# End time: 21:48:04 on Dec 04,2024, Elapsed time: 0:00:46
-# Errors: 0, Warnings: 4
-# Compile of apb.sv failed with 1 errors.
-# Compile of tb_apb.sv was successful.
+# End time: 12:41:29 on Dec 05,2024, Elapsed time: 0:01:37
+# Errors: 0, Warnings: 3
+# Compile of apb_interface.sv was successful.
+# Compile of apb_master.sv was successful.
 # Compile of apb_pkg.sv was successful.
-# 3 compiles, 1 failed with 1 error.
+# Compile of apb_slave.sv was successful.
+# Compile of apb_top.sv was successful with warnings.
+# Compile of tb_apb.sv was successful with warnings.
+# 6 compiles, 0 failed with no errors.
+vopt work.tb_apb +acc -o tb1_opt
+# QuestaSim-64 vopt 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 12:43:58 on Dec 05,2024
+# vopt -reportprogress 300 work.tb_apb "+acc" -o tb1_opt 
+# 
+# Top level modules:
+# 	tb_apb
+# 
+# Analyzing design...
+# -- Loading module tb_apb
+# -- Loading module apb_master_slave_top
+# -- Loading module apb_add_master
+# -- Importing package apb_pkg
+# -- Loading module apb_add_slave
+# Optimizing 5 design-units (inlining 0/4 module instances):
+# -- Optimizing package apb_pkg(fast)
+# -- Optimizing module apb_add_master(fast)
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# -- Optimizing module tb_apb(fast)
+# -- Optimizing module apb_add_slave(fast)
+# -- Optimizing module apb_master_slave_top(fast)
+# Optimized design name is tb1_opt
+# End time: 12:43:59 on Dec 05,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 12:44:13 on Dec 05,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position insertpoint  \
+sim:/tb_apb/pclk
+add wave -position insertpoint  \
+sim:/tb_apb/preset_n
+add wave -position insertpoint  \
+sim:/tb_apb/psel_o
+add wave -position insertpoint  \
+sim:/tb_apb/penable_o
+add wave -position insertpoint  \
+sim:/tb_apb/uut/paddr
+add wave -position insertpoint  \
+sim:/tb_apb/uut/add_i
+add wave -position insertpoint  \
+sim:/tb_apb/uut/external_wdata_i
+add wave -position insertpoint  \
+sim:/tb_apb/uut/rdata_o
+add wave -position insertpoint  \
+sim:/tb_apb/uut/ready_o
+run -all
+# Performing WRITE operation...
+# Time:                   80, Write Data: 0x1234abcd
+# Performing READ operation...
+# Time:                  110, Read Data: 0x00000000
+# Performing another READ operation...
+# Time:                  150, Read Data: 0x1234abcd
+# Performing another WRITE operation...
+# Time:                  240, Write Data: 0x5678ef01
+# Performing another READ operation...
+# Time:                  270, Read Data: 0x00000000
+# Performing final READ operation...
+# Time:                  310, Read Data: 0x5678ef01
+# ** Note: $stop    : /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv(87)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv line 87
+quit -sim
+# End time: 12:51:54 on Dec 05,2024, Elapsed time: 0:07:41
+# Errors: 0, Warnings: 2
+# Compile of apb_interface.sv was successful.
+# Compile of apb_master.sv was successful.
+# Compile of apb_pkg.sv was successful.
+# Compile of apb_slave.sv was successful.
+# Compile of apb_top.sv was successful with warnings.
+# Compile of tb_apb.sv was successful with warnings.
+# 6 compiles, 0 failed with no errors.
+history
+#      1  vopt work.tb_apb -o tb1_opt
+#      2  vsim work.tb_apb -voptargs=+acc
+#      3  add wave -position insertpoint sim:/tb_apb/*
+#      4  add wave -position insertpoint  \
+# 	sim:/tb_apb/uut/paddr
+#      5  run -all
+#      6  quit -sim
+#      7  vopt work.tb_apb +acc -o tb1_opt
+#      8  vsim -voptargs=+acc work.tb_apb
+#      9  add wave -position insertpoint  \
+# 	sim:/tb_apb/pclk
+#     10  add wave -position insertpoint  \
+# 	sim:/tb_apb/preset_n
+#     11  add wave -position insertpoint  \
+# 	sim:/tb_apb/psel_o
+#     12  add wave -position insertpoint  \
+# 	sim:/tb_apb/penable_o
+#     13  add wave -position insertpoint  \
+# 	sim:/tb_apb/uut/paddr
+#     14  add wave -position insertpoint  \
+# 	sim:/tb_apb/uut/add_i
+#     15  add wave -position insertpoint  \
+# 	sim:/tb_apb/uut/external_wdata_i
+#     16  add wave -position insertpoint  \
+# 	sim:/tb_apb/uut/rdata_o
+#     17  add wave -position insertpoint  \
+# 	sim:/tb_apb/uut/ready_o
+#     18  run -all
+#     19  quit -sim
+#     20  history
+!7
+# vopt work.tb_apb +acc -o tb1_opt
+# QuestaSim-64 vopt 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 12:53:58 on Dec 05,2024
+# vopt -reportprogress 300 work.tb_apb "+acc" -o tb1_opt 
+# 
+# Top level modules:
+# 	tb_apb
+# 
+# Analyzing design...
+# -- Loading module tb_apb
+# -- Loading module apb_master_slave_top
+# -- Loading module apb_add_master
+# -- Importing package apb_pkg
+# -- Loading module apb_add_slave
+# Incremental compilation check found 4 design-units (out of 5) may be reused.
+# Optimizing 1 design-unit (inlining 0/4 module instances):
+# -- Optimizing module apb_add_master(fast)
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# Optimized design name is tb1_opt
+# End time: 12:54:00 on Dec 05,2024, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+!8
+# vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 12:54:03 on Dec 05,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+!9 !10 !11 !12 !13 !14 !15 !16 !17
+# add wave -position insertpoint  \
+# sim:/tb_apb/pclk
+!10
+# add wave -position insertpoint  \
+# sim:/tb_apb/preset_n
+!11
+# add wave -position insertpoint  \
+# sim:/tb_apb/psel_o
+!12
+# add wave -position insertpoint  \
+# sim:/tb_apb/penable_o
+!13
+# add wave -position insertpoint  \
+# sim:/tb_apb/uut/paddr
+!14
+# add wave -position insertpoint  \
+# sim:/tb_apb/uut/add_i
+!15
+# add wave -position insertpoint  \
+# sim:/tb_apb/uut/external_wdata_i
+!16
+# add wave -position insertpoint  \
+# sim:/tb_apb/uut/rdata_o
+!17
+# add wave -position insertpoint  \
+# sim:/tb_apb/uut/ready_o
+run -all
+# Performing WRITE operation...
+# Time:                   80, Write Data: 0x1234abcd
+# Performing READ operation...
+# Time:                  110, Read Data: 0x00000000
+# Performing another READ operation...
+# Time:                  150, Read Data: 0x00000000
+# Performing another WRITE operation...
+# Time:                  240, Write Data: 0x5678ef01
+# Performing another READ operation...
+# Time:                  270, Read Data: 0x00000000
+# Performing final READ operation...
+# Time:                  310, Read Data: 0x00000000
+# ** Note: $stop    : /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv(87)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv line 87
+quit -sim
+# End time: 13:13:10 on Dec 05,2024, Elapsed time: 0:19:07
+# Errors: 0, Warnings: 2
+quit

@@ -1,0 +1,101 @@
+/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv {2 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling package apb_pkg
+-- Compiling package apb_pkg
+** Warning: ** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv(3)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv(2)
+** at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_pkg.sv(2): (vlog-2275) Existing package 'apb_pkg' at line 2 will be overwritten.
+-- Compiling package apb_pkg
+** Warning: ** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv(3)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv(3)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_master.sv(2)
+** at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_pkg.sv(2): (vlog-2275) Existing package 'apb_pkg' at line 2 will be overwritten.
+-- Compiling interface apb_interface
+-- Compiling module apb_add_master
+-- Importing package apb_pkg
+-- Compiling package apb_pkg
+** Warning: ** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv(3)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv(4)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_slave.sv(2)
+** at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_pkg.sv(2): (vlog-2275) Existing package 'apb_pkg' at line 2 will be overwritten.
+-- Compiling interface apb_interface
+** Warning: ** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv(3)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv(4)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_slave.sv(3)
+** at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_interface.sv(2): (vlog-2275) Existing interface 'apb_interface' at line 2 will be overwritten.
+-- Compiling module apb_add_slave
+-- Compiling interface apb_interface
+** Warning: ** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv(3)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv(5)
+** at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_interface.sv(2): (vlog-2275) Existing interface 'apb_interface' at line 2 will be overwritten.
+-- Compiling module apb_master_slave_top
+-- Compiling interface apb_interface
+** Warning: ** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv(4)
+** at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_interface.sv(2): (vlog-2275) Existing interface 'apb_interface' at line 2 will be overwritten.
+-- Compiling module tb_apb
+
+Top level modules:
+	tb_apb
+
+} {} {}} /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_pkg.sv {1 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_pkg.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling package apb_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_slave.sv {1 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_slave.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling package apb_pkg
+-- Compiling interface apb_interface
+-- Compiling module apb_add_slave
+-- Importing package apb_pkg
+
+Top level modules:
+	apb_add_slave
+
+} {} {}} /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv {2 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling package apb_pkg
+-- Compiling package apb_pkg
+** Warning: ** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv(3)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_master.sv(2)
+** at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_pkg.sv(2): (vlog-2275) Existing package 'apb_pkg' at line 2 will be overwritten.
+-- Compiling interface apb_interface
+-- Compiling module apb_add_master
+-- Importing package apb_pkg
+-- Compiling package apb_pkg
+** Warning: ** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv(4)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_slave.sv(2)
+** at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_pkg.sv(2): (vlog-2275) Existing package 'apb_pkg' at line 2 will be overwritten.
+-- Compiling interface apb_interface
+** Warning: ** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv(4)
+** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_slave.sv(3)
+** at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_interface.sv(2): (vlog-2275) Existing interface 'apb_interface' at line 2 will be overwritten.
+-- Compiling module apb_add_slave
+-- Compiling interface apb_interface
+** Warning: ** while parsing file included at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv(5)
+** at /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_interface.sv(2): (vlog-2275) Existing interface 'apb_interface' at line 2 will be overwritten.
+-- Compiling module apb_master_slave_top
+
+Top level modules:
+	apb_master_slave_top
+
+} {} {}} /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_master.sv {1 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_master.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling package apb_pkg
+-- Compiling interface apb_interface
+-- Compiling module apb_add_master
+-- Importing package apb_pkg
+
+Top level modules:
+	apb_add_master
+
+} {} {}} /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_interface.sv {1 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_interface.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling interface apb_interface
+
+Top level modules:
+	--none--
+
+} {} {}}

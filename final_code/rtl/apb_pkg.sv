@@ -1,25 +1,14 @@
+// apb_pkg.sv
 package apb_pkg;
-
-  // APB State Definitions
-  typedef enum logic [1:0] {
-    ST_IDLE,   // Idle state
-    ST_SETUP,  // Setup state
-    ST_ACCESS  // Access state
-  } apb_state_t;
-
-  // APB Signal Struct
   typedef struct packed {
-    logic psel;        // Select signal
-    logic penable;     // Enable signal
-    logic pwrite;      // Write control signal
-    logic [31:0] paddr; // Address bus
-    logic [31:0] pwdata; // Write data bus
-    logic [31:0] prdata; // Read data bus
-    logic pready;      // Ready signal
-  } apb_signals_t;
-
-  // Slave Address Definition
+    logic psel;
+    logic penable;
+    logic pwrite;
+    logic [31:0] paddr;
+    logic [31:0] pwdata;
+    logic [31:0] prdata;
+    logic pready;
+  } apb_interface_struct_t;
+  // Define the slave address for example
   localparam logic [31:0] SLAVE_ADDR = 32'hA000;
-
 endpackage
-

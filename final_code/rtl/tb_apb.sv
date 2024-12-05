@@ -1,18 +1,26 @@
-module tb_apb_master_slave;
 
+`include "apb_pkg.sv"           // Include the package
+`include "apb_top.sv"           // Include the top-level module
+`include "apb_interface.sv"     // Include the interface
+
+module tb_apb;
   logic pclk, preset_n;
   logic [1:0] add_i;
   logic [31:0] external_wdata_i;
   logic ready_o;
   logic [31:0] rdata_o;
+  logic psel_o, penable_o;
 
+  // Instantiate the DUT
   apb_master_slave_top uut (
     .pclk(pclk),
     .preset_n(preset_n),
     .add_i(add_i),
     .external_wdata_i(external_wdata_i),
     .ready_o(ready_o),
-    .rdata_o(rdata_o)
+    .rdata_o(rdata_o),
+    .psel_o(psel_o),
+    .penable_o(penable_o)
   );
 
   always #10 pclk = ~pclk;
@@ -33,21 +41,21 @@ module tb_apb_master_slave;
       external_wdata_i = data;
       add_i = 2'b11;
       @(posedge pclk);
-      wait (ready_o);
+      wait (ready_o); // Wait for slave to assert PREADY
       @(negedge pclk);
-      $display("Write Data: 0x%08h", data);
-      add_i = 2'b00;
+      $display("Time: %t, Write Data: 0x%08h", $time, data); // Display the data written
+      add_i = 2'b00;  // Go back to idle after the transaction
     end
   endtask
-
+  
   task perform_read();
     begin
-      add_i = 2'b01;
+      add_i = 2'b01; // Read command
       @(posedge pclk);
-      wait (ready_o);
-      @(posedge pclk);
-      $display("Read Data: 0x%08h", rdata_o);
-      add_i = 2'b00;
+      wait (ready_o); // Wait for slave to assert PREADY
+      @(posedge pclk); // Extra clock cycle for PRDATA to stabilize
+      $display("Time: %t, Read Data: 0x%08h", $time, rdata_o); // Display the data read
+      add_i = 2'b00; // Go back to idle
     end
   endtask
 
@@ -55,33 +63,28 @@ module tb_apb_master_slave;
     pclk = 0;
     reset_system();
 
-    $display("TIME: %t",$time);
     $display("Performing WRITE operation...");
     perform_write(32'h1234abcd);
 
-    $display("TIME: %t",$time);
     $display("Performing READ operation...");
     perform_read();
     
-    #30;
-    $display("TIME: %t",$time);
+    $display("Performing another READ operation...");
     perform_read();
 
+    #30;
     reset_system();
-    
-    $display("TIME: %t",$time);
+
     $display("Performing another WRITE operation...");
     perform_write(32'h5678ef01);
 
-    $display("TIME: %t",$time);
     $display("Performing another READ operation...");
     perform_read();
     
-    #30;
-    $display("TIME: %t",$time);
+    $display("Performing final READ operation...");
     perform_read();
 
     $stop;
   end
-
 endmodule
+
