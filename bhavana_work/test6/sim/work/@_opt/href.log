@@ -1,0 +1,4 @@
+BEGIN 3:apb_if:fast__1:work
+    master_signals :  1:apb_master:fast:work 1:apb_master_slave_top:fast:work 1:apb_slave:fast:work
+    slave_signals :  1:apb_master:fast:work 1:apb_master_slave_top:fast:work 1:apb_slave:fast:work
+END 
