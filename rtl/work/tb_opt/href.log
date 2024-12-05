@@ -1,0 +1,5 @@
+BEGIN 3:apb_interface:fast__2:work
+    pclk :  1:apb_add_slave:fast:work 1:apb_add_master:fast:work
+    signals :  1:apb_master_slave_top:fast:work 1:apb_add_slave:fast:work 1:apb_add_master:fast:work
+    preset_n :  1:apb_add_slave:fast:work 1:apb_add_master:fast:work
+END 

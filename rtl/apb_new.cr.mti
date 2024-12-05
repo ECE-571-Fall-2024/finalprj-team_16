@@ -1,0 +1,37 @@
+/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_interface.sv {1 {vlog -work work -vopt -sv -stats=none /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_interface.sv
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling package apb_pkg
+-- Compiling interface apb_interface
+-- Importing package apb_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv {1 {vlog -work work -vopt -sv -stats=none /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling package apb_pkg
+-- Compiling module apb_master_slave_top
+-- Importing package apb_pkg
+-- Compiling module apb_add_master
+-- Compiling module apb_add_slave
+
+Top level modules:
+	apb_master_slave_top
+
+} {} {}} /u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv {1 {vlog -work work -vopt -sv -stats=none /u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling package apb_pkg
+-- Compiling module tb_apb_master_slave
+-- Importing package apb_pkg
+
+Top level modules:
+	tb_apb_master_slave
+
+} {} {}} /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_pkg.sv {1 {vlog -work work -vopt -sv -stats=none /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_pkg.sv
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling package apb_pkg
+
+Top level modules:
+	--none--
+
+} {} {}}
