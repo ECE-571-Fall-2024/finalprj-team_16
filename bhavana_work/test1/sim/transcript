@@ -1,0 +1,51 @@
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project apb_master_slave
+# reading /pkgs/mentor/questa/2024.2/questasim/linux_x86_64/../modelsim.ini
+# Loading project apb_simple_master_slave
+# Compile of apb.sv was successful with warnings.
+# Compile of apb_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.apb_tb
+# vsim -voptargs="+acc" work.apb_tb 
+# Start time: 19:43:34 on Dec 01,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Warning: /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv(42): (vopt-2182) 'nxt_write' might be read before written in always_comb or always @* block.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading sv_std.std
+# Loading work.apb_tb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_master(fast)
+# Loading work.apb_slave(fast)
+add wave -position end  sim:/apb_tb/P_clk
+add wave -position end  sim:/apb_tb/P_rst
+add wave -position end  sim:/apb_tb/add_i
+add wave -position end  sim:/apb_tb/P_ready
+add wave -position end  sim:/apb_tb/P_rdata
+run -all
+# Write operation issued.
+# Write operation issued.
+# Write operation issued.
+# Read operation issued. Data read = x
+# Read operation issued. Data read = x
+# ** Note: $finish    : /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv(81)
+#    Time: 165 ns  Iteration: 0  Instance: /apb_tb
+# 1
+# Break in Module apb_tb at /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv line 81
+quit -sim
+# End time: 19:46:00 on Dec 01,2024, Elapsed time: 0:02:26
+# Errors: 0, Warnings: 7

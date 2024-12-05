@@ -1,0 +1,143 @@
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project apb_simple_master_slave
+vsim -voptargs=+acc work.apb_tb
+# vsim -voptargs="+acc" work.apb_tb 
+# Start time: 02:03:02 on Dec 02,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv(70): (vopt-7033) Variable 'read_data' driven in a combinational block, may not be driven by any other process. See /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv(60).
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=1.
+# Error loading design
+# End time: 02:03:03 on Dec 02,2024, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 2
+# Compile of apb.sv was successful.
+vsim -voptargs=+acc work.apb_tb
+# vsim -voptargs="+acc" work.apb_tb 
+# Start time: 02:05:07 on Dec 02,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv(70): (vopt-7033) Variable 'read_data' driven in a combinational block, may not be driven by any other process. See /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv(60).
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=1.
+# Error loading design
+# End time: 02:05:09 on Dec 02,2024, Elapsed time: 0:00:02
+# Errors: 2, Warnings: 3
+# Compile of apb.sv was successful.
+# Compile of apb_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.apb_tb
+# vsim -voptargs="+acc" work.apb_tb 
+# Start time: 02:11:35 on Dec 02,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.apb_tb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_master(fast)
+# Loading work.apb_slave(fast)
+# ** Error (suppressible): (vsim-7033) Variable '/apb_tb/uut/master_inst/P_wdata' driven in a combinational block, may not be driven by any other process. See /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv(43).
+#    Time: 0 ns  Iteration: 0  Instance: /apb_tb File: /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv Line: 36
+# Error loading design
+# End time: 02:11:37 on Dec 02,2024, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 3
+# Compile of apb_tb.sv was successful.
+vsim -voptargs=+acc work.apb_tb
+# vsim -voptargs="+acc" work.apb_tb 
+# Start time: 02:14:36 on Dec 02,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.apb_tb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_master(fast)
+# Loading work.apb_slave(fast)
+run -all
+# Starting simulation...
+# Time=5 | P_clk=1 | P_rst=1 | add_i=00 | P_ready=0 | P_rdata=00000000
+# Time=15 | P_clk=1 | P_rst=0 | add_i=00 | P_ready=0 | P_rdata=00000000
+# Starting write operation...
+# Time=25 | P_clk=1 | P_rst=0 | add_i=10 | P_ready=0 | P_rdata=00000000
+# Time=35 | P_clk=1 | P_rst=0 | add_i=10 | P_ready=0 | P_rdata=00000000
+# Time=45 | P_clk=1 | P_rst=0 | add_i=00 | P_ready=0 | P_rdata=00000000
+# Time=55 | P_clk=1 | P_rst=0 | add_i=00 | P_ready=1 | P_rdata=xxxxxxxx
+# Starting read operation...
+# Time=65 | P_clk=1 | P_rst=0 | add_i=01 | P_ready=1 | P_rdata=xxxxxxxx
+# Time=75 | P_clk=1 | P_rst=0 | add_i=01 | P_ready=0 | P_rdata=xxxxxxxx
+# Time=85 | P_clk=1 | P_rst=0 | add_i=00 | P_ready=0 | P_rdata=xxxxxxxx
+# Time=95 | P_clk=1 | P_rst=0 | add_i=00 | P_ready=1 | P_rdata=xxxxxxxx
+# Time=105 | P_clk=1 | P_rst=0 | add_i=00 | P_ready=1 | P_rdata=xxxxxxxx
+# Time=115 | P_clk=1 | P_rst=0 | add_i=00 | P_ready=0 | P_rdata=xxxxxxxx
+# Time=125 | P_clk=1 | P_rst=0 | add_i=00 | P_ready=0 | P_rdata=xxxxxxxx
+# ** Note: $finish    : /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv(51)
+#    Time: 130 ns  Iteration: 0  Instance: /apb_tb
+# 1
+# Break in Module apb_tb at /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv line 51
+quit -sim
+# End time: 02:16:45 on Dec 02,2024, Elapsed time: 0:02:09
+# Errors: 0, Warnings: 3
+# Compile of apb.sv failed with 2 errors.
+# Compile of apb.sv failed with 1 errors.
+# Compile of apb.sv was successful.
+vsim -voptargs=+acc work.apb_tb
+# vsim -voptargs="+acc" work.apb_tb 
+# Start time: 02:30:16 on Dec 02,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv(74): (vopt-7033) Variable 'read_data' driven in a combinational block, may not be driven by any other process. See /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv(64).
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=1.
+# Error loading design
+# End time: 02:30:18 on Dec 02,2024, Elapsed time: 0:00:02
+# Errors: 2, Warnings: 5
+# Compile of apb.sv was successful.
+vsim -voptargs=+acc work.apb_tb
+# vsim -voptargs="+acc" work.apb_tb 
+# Start time: 02:32:14 on Dec 02,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv(11): (vopt-2912) Port 'P_clk' not found in module 'apb_master_slave_top' (1st connection).
+# ** Error (suppressible): /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv(11): (vopt-2912) Port 'P_rst' not found in module 'apb_master_slave_top' (2nd connection).
+# ** Error (suppressible): /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv(11): (vopt-2912) Port 'add_i' not found in module 'apb_master_slave_top' (3rd connection).
+# ** Error (suppressible): /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv(11): (vopt-2912) Port 'P_ready' not found in module 'apb_master_slave_top' (4th connection).
+# ** Error (suppressible): /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv(11): (vopt-2912) Port 'P_rdata' not found in module 'apb_master_slave_top' (5th connection).
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=5, Warnings=1.
+# Error loading design
+# End time: 02:32:15 on Dec 02,2024, Elapsed time: 0:00:01
+# Errors: 5, Warnings: 3
+# Compile of apb.sv was successful.
+# Compile of apb_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.apb_tb
+# vsim -voptargs="+acc" work.apb_tb 
+# Start time: 02:34:52 on Dec 02,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv(74): (vopt-7033) Variable 'read_data' driven in a combinational block, may not be driven by any other process. See /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv(64).
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=1.
+# Error loading design
+# End time: 02:34:54 on Dec 02,2024, Elapsed time: 0:00:02
+# Errors: 2, Warnings: 3

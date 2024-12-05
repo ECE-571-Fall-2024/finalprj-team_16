@@ -1,0 +1,156 @@
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project apb_simple_master_slave
+# reading /pkgs/mentor/questa/2024.2/questasim/linux_x86_64/../modelsim.ini
+# Loading project test4
+# Compile of apb_master.sv was successful.
+# Compile of apb_slave.sv was successful.
+# Compile of apb_top.sv was successful.
+# Compile of tb_apb_master_slave.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.tb_apb_master_slave
+# vsim work.tb_apb_master_slave 
+# Start time: 02:50:53 on Dec 02,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_apb_master_slave(fast)
+quit -sim
+# End time: 02:51:06 on Dec 02,2024, Elapsed time: 0:00:13
+# Errors: 0, Warnings: 5
+vsim -voptargs=+acc work.tb_apb_master_slave
+# vsim -voptargs="+acc" work.tb_apb_master_slave 
+# Start time: 02:51:10 on Dec 02,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_apb_master_slave(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position end  sim:/tb_apb_master_slave/pclk
+add wave -position end  sim:/tb_apb_master_slave/preset_n
+add wave -position end  sim:/tb_apb_master_slave/add_i
+add wave -position end  sim:/tb_apb_master_slave/ready_o
+add wave -position end  sim:/tb_apb_master_slave/rdata_o
+run -all
+# Performing WRITE operation...
+# Performing READ operation...
+# Read Data: 0x00000000
+# Performing another WRITE operation...
+# Performing another READ operation...
+# Read Data: 0x00000000
+# ** Note: $stop    : /u/bhavanap/ECE571-2024/apb_project/test4/rtl/tb_apb_master_slave.sv(83)
+#    Time: 180 ns  Iteration: 1  Instance: /tb_apb_master_slave
+# Break in Module tb_apb_master_slave at /u/bhavanap/ECE571-2024/apb_project/test4/rtl/tb_apb_master_slave.sv line 83
+quit -sim
+# End time: 02:57:38 on Dec 02,2024, Elapsed time: 0:06:28
+# Errors: 0, Warnings: 2
+# Compile of apb_master.sv was successful.
+# Compile of apb_slave.sv was successful.
+# Compile of apb_top.sv was successful.
+# Compile of tb_apb_master_slave.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_apb_master_slave
+# vsim -voptargs="+acc" work.tb_apb_master_slave 
+# Start time: 03:21:44 on Dec 02,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_apb_master_slave(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position end  sim:/tb_apb_master_slave/pclk
+add wave -position end  sim:/tb_apb_master_slave/preset_n
+add wave -position end  sim:/tb_apb_master_slave/add_i
+add wave -position end  sim:/tb_apb_master_slave/ready_o
+add wave -position end  sim:/tb_apb_master_slave/rdata_o
+run -all
+# Performing WRITE operation...
+# Performing READ operation...
+# Read Data: 0x00000000
+# Performing another WRITE operation...
+# Performing another READ operation...
+# Read Data: 0x00000000
+# ** Note: $stop    : /u/bhavanap/ECE571-2024/apb_project/test4/rtl/tb_apb_master_slave.sv(83)
+#    Time: 180 ns  Iteration: 1  Instance: /tb_apb_master_slave
+# Break in Module tb_apb_master_slave at /u/bhavanap/ECE571-2024/apb_project/test4/rtl/tb_apb_master_slave.sv line 83
+quit -sim
+# End time: 03:24:16 on Dec 02,2024, Elapsed time: 0:02:32
+# Errors: 0, Warnings: 3
+# Compile of apb_master.sv was successful.
+vsim -voptargs=+acc work.tb_apb_master_slave
+# vsim -voptargs="+acc" work.tb_apb_master_slave 
+# Start time: 03:24:38 on Dec 02,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.tb_apb_master_slave(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position end  sim:/tb_apb_master_slave/pclk
+add wave -position end  sim:/tb_apb_master_slave/preset_n
+add wave -position end  sim:/tb_apb_master_slave/add_i
+add wave -position end  sim:/tb_apb_master_slave/ready_o
+add wave -position end  sim:/tb_apb_master_slave/rdata_o
+run -all
+# Performing WRITE operation...
+# Performing READ operation...
+# Read Data: 0x00000000
+# Performing another WRITE operation...
+# Performing another READ operation...
+# Read Data: 0x00000000
+# ** Note: $stop    : /u/bhavanap/ECE571-2024/apb_project/test4/rtl/tb_apb_master_slave.sv(83)
+#    Time: 180 ns  Iteration: 1  Instance: /tb_apb_master_slave
+# Break in Module tb_apb_master_slave at /u/bhavanap/ECE571-2024/apb_project/test4/rtl/tb_apb_master_slave.sv line 83
+quit -sim
+# End time: 03:25:11 on Dec 02,2024, Elapsed time: 0:00:33
+# Errors: 0, Warnings: 2
+# Compile of apb_master.sv was successful.
+# Compile of apb_slave.sv was successful.
+# Compile of apb_top.sv was successful.
+# Compile of tb_apb_master_slave.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_apb_master_slave
+# vsim -voptargs="+acc" work.tb_apb_master_slave 
+# Start time: 03:32:02 on Dec 02,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_apb_master_slave(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position end  sim:/tb_apb_master_slave/pclk
+add wave -position end  sim:/tb_apb_master_slave/preset_n
+add wave -position end  sim:/tb_apb_master_slave/add_i
+add wave -position end  sim:/tb_apb_master_slave/ready_o
+add wave -position end  sim:/tb_apb_master_slave/rdata_o
+run -all
+# Performing WRITE operation...
+# Performing READ operation...
+# Read Data: 0x00000000
+# Performing another WRITE operation...
+# Performing another READ operation...
+# Read Data: 0x00000000
+# ** Note: $stop    : /u/bhavanap/ECE571-2024/apb_project/test4/rtl/tb_apb_master_slave.sv(83)
+#    Time: 160 ns  Iteration: 1  Instance: /tb_apb_master_slave
+# Break in Module tb_apb_master_slave at /u/bhavanap/ECE571-2024/apb_project/test4/rtl/tb_apb_master_slave.sv line 83

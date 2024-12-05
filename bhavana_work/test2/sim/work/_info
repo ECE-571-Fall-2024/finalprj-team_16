@@ -1,0 +1,127 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/u/bhavanap/ECE571-2024/apb_project/test2/sim
+T_opt
+!s110 1733109249
+VRHW;5_;_m:CleN8VU:8_S3
+04 19 4 work tb_apb_master_slave fast 0
+=1-5254006cf05e-674d2600-9776f-5289
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.2;79
+vapb_add_master
+2/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_master.sv
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1733109237
+!i10b 1
+!s100 DNW1zBU^ZTh`7=oCL?kP@3
+I>c4mJK9P]oZ02[I=k]A@<1
+S1
+R1
+w1733108983
+8/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_master.sv
+F/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_master.sv
+!i122 0
+L0 1 92
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z7 !s108 1733109237.000000
+!s107 /u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_master.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_master.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vapb_add_slave
+2/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_slave.sv
+R3
+R4
+!i10b 1
+!s100 eC[<>O?U6eW<DkW0APXDE2
+I<@z?`lPlbNJ6Zil1lhHK73
+S1
+R1
+w1733109023
+8/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_slave.sv
+F/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_slave.sv
+!i122 1
+L0 1 51
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_slave.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_slave.sv|
+!i113 0
+R8
+R2
+vapb_master_slave_top
+2/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_top.sv
+R3
+R4
+!i10b 1
+!s100 nF@4X>faPD3Bji55NSUWQ3
+InIQn8R[nI^:I6HCO;jj9Y3
+S1
+R1
+w1733109084
+8/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_top.sv
+F/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_top.sv
+!i122 2
+L0 1 49
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/bhavanap/ECE571-2024/apb_project/test2/rtl/apb_top.sv|
+!i113 0
+R8
+R2
+vtb_apb_master_slave
+2/u/bhavanap/ECE571-2024/apb_project/test2/rtl/tb_apb_master_slave.sv
+R3
+!s110 1733109238
+!i10b 1
+!s100 nZKGMo=YkS^Jd17:k_^193
+IfRYF[i5>S^A:_h4A93aa`1
+S1
+R1
+w1733109177
+8/u/bhavanap/ECE571-2024/apb_project/test2/rtl/tb_apb_master_slave.sv
+F/u/bhavanap/ECE571-2024/apb_project/test2/rtl/tb_apb_master_slave.sv
+!i122 3
+L0 1 86
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /u/bhavanap/ECE571-2024/apb_project/test2/rtl/tb_apb_master_slave.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/bhavanap/ECE571-2024/apb_project/test2/rtl/tb_apb_master_slave.sv|
+!i113 0
+R8
+R2

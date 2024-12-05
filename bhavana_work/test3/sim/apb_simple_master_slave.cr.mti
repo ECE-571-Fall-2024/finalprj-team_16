@@ -1,0 +1,17 @@
+/u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv {1 {vlog -work work -vopt -sv -stats=none /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module apb_master
+-- Compiling module apb_slave
+-- Compiling module apb_master_slave_top
+
+Top level modules:
+	apb_master_slave_top
+
+} {} {}} /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv {1 {vlog -work work -vopt -sv -stats=none /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module apb_tb
+
+Top level modules:
+	apb_tb
+
+} {} {}}

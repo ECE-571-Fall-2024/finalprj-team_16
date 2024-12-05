@@ -1,0 +1,162 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+Z2 !s12c _opt1
+R1
+R2
+R1
+R2
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z3 d/u/bhavanap/ECE571-2024/apb_project/test2/sim
+vapb_master
+Z4 2/u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z6 !s110 1733135684
+!i10b 1
+!s100 [VLQb=RHOO3Az]G]hQPgZ3
+IRikCfKTB0V@fd^Um_bfN23
+S1
+Z7 d/u/bhavanap/ECE571-2024/apb_project/test3/sim
+Z8 w1733135641
+Z9 8/u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv
+Z10 F/u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv
+!i122 22
+L0 1 77
+Z11 VDg1SIo80bB@j0V0VzS_@n1
+Z12 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z13 !s108 1733135684.000000
+Z14 !s107 /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv|
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb.sv|
+!i113 0
+Z16 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z17 tCvgOpt 0
+vapb_master_slave_top
+R4
+R5
+R6
+!i10b 1
+!s100 _gZBafFZ1]WDcch1<B=DL0
+IWcYgBU]821ObiGZBaFaN=2
+S1
+R7
+R8
+R9
+R10
+!i122 22
+L0 116 43
+R11
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R17
+vapb_slave
+R4
+R5
+R6
+!i10b 1
+!s100 9gH^9V?Y6]l_WXQX1:EhI3
+II>l6R[4gh16_Ti3Z<fc6;3
+S1
+R7
+R8
+R9
+R10
+!i122 22
+L0 79 36
+R11
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R17
+vapb_tb
+Z18 2/u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv
+R5
+R6
+!i10b 1
+!s100 VX4VP?S=HnQLzmBJWNen]1
+I1BzX3bB9hfX>FaAYYT>GC3
+S1
+R7
+w1733135674
+Z19 8/u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv
+Z20 F/u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv
+!i122 23
+L0 1 59
+R11
+R12
+r1
+!s85 0
+31
+R13
+Z21 !s107 /u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv|
+Z22 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/bhavanap/ECE571-2024/apb_project/test3/rtl/apb_tb.sv|
+!i113 0
+R16
+R17
+vtb_apb_master_slave_top
+R18
+R5
+!s110 1733133372
+!i10b 1
+!s100 c]g5KHXYRUnBDGfVQ^c8Z1
+IhoYi1XUSMm3k:c7_7J^I73
+S1
+R7
+w1733133334
+R19
+R20
+!i122 12
+L0 1 60
+R11
+R12
+r1
+!s85 0
+31
+!s108 1733133371.000000
+R21
+R22
+!i113 0
+R16
+R17
