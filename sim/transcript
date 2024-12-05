@@ -1,83 +1,335 @@
 # //  Questa Sim-64
-# //  Version 2024.2 linux_x86_64 May 20 2024
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
 # //
-# // Unpublished work. Copyright 2024 Siemens
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
 # //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
 # //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
-# //
-# Loading project apb
-# reading /pkgs/mentor/questa/2024.2/questasim/linux_x86_64/../modelsim.ini
-# Loading project apb
-# reading /pkgs/mentor/questa/2024.2/questasim/linux_x86_64/../modelsim.ini
-# Loading project apb
+# Loading project apb_extra
+# Compile of apb.sv failed with 1 errors.
+# Compile of tb_apb.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+gvim apb.sv
+gvim tb_apb.sv
 # Compile of apb.sv was successful.
 # Compile of tb_apb.sv was successful.
 # 2 compiles, 0 failed with no errors.
-vopt work.tb_apb_master_slave -o tb_opt
-# QuestaSim-64 vopt 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 21:41:03 on Dec 04,2024
-# vopt -reportprogress 300 work.tb_apb_master_slave -o tb_opt 
+# Optimization canceled
+vopt work.tb_apb -o tb_apb_master_slave_opt
+# QuestaSim-64 vopt 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 22:38:55 on Dec 04,2024
+# vopt -reportprogress 300 work.tb_apb -o tb_apb_master_slave_opt 
+# 
+# Top level modules:
+# 	tb_apb
+# 
+# Analyzing design...
+# -- Loading module tb_apb
+# ** Error: /u/ajalgar/ECE571-F24/extra_work/tb_apb.sv(11): Module 'apb_top' is not defined.
+#  For instance 'uut' at path 'tb_apb'
+# Optimization failed
+# End time: 22:38:55 on Dec 04,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vopt failed.
+vopt work.tb_apb_master_slave -o tb_apb_master_slave_opt
+# QuestaSim-64 vopt 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 22:40:24 on Dec 04,2024
+# vopt -reportprogress 300 work.tb_apb_master_slave -o tb_apb_master_slave_opt 
 # 
 # Top level modules:
 # 	tb_apb_master_slave
 # 
 # Analyzing design...
 # -- Loading module tb_apb_master_slave
+# -- Loading interface apb_interface
 # -- Loading module apb_master_slave_top
 # -- Loading module apb_add_master
 # -- Loading module apb_add_slave
-# Optimizing 4 design-units (inlining 3/4 module instances):
+# Optimizing 7 design-units (inlining 5/6 module instances):
+# -- Inlining interface apb_interface(fast__1)
+# -- Inlining interface apb_interface(fast__2)
 # -- Inlining module apb_add_master(fast)
 # -- Inlining module apb_add_slave(fast)
 # -- Inlining module apb_master_slave_top(fast)
 # -- Optimizing module tb_apb_master_slave(fast)
-# Optimized design name is tb_opt
-# End time: 21:41:04 on Dec 04,2024, Elapsed time: 0:00:01
+# -- Optimizing interface apb_interface(fast)
+# Optimized design name is tb_apb_master_slave_opt
+# End time: 22:40:25 on Dec 04,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 vsim work.tb_apb_master_slave -voptargs=+acc
 # vsim work.tb_apb_master_slave -voptargs="+acc" 
-# Start time: 21:41:17 on Dec 04,2024
+# Start time: 22:40:41 on Dec 04,2024
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.tb_apb_master_slave(fast)
+# Loading work.apb_interface(fast__1)
 # Loading work.apb_master_slave_top(fast)
+# Loading work.apb_interface(fast__2)
 # Loading work.apb_add_master(fast)
 # Loading work.apb_add_slave(fast)
 add wave -position insertpoint sim:/tb_apb_master_slave/*
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/uut/u_master/pwrite_q
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/uut/apb_intf/psel
 run -all
-# TIME:                   40
 # Performing WRITE operation...
 # Write Data: 0x1234abcd
-# TIME:                   80
 # Performing READ operation...
 # Slave: Write operation. Address: 0x0000a000, Data: 0x1234abcd
 # Read Data: 0x00000000
-# TIME:                  140
-# Slave: Read operation. Address: 0x0000a000, Data: 0x1234abcd
+# Performing READ operation...
 # Read Data: 0x1234abcd
-# TIME:                  200
-# Performing another WRITE operation...
-# Write Data: 0x5678ef01
-# TIME:                  240
-# Performing another READ operation...
-# Slave: Write operation. Address: 0x0000a000, Data: 0x5678ef01
+# ** Note: $stop    : /u/ajalgar/ECE571-F24/extra_work/tb_apb.sv(73)
+#    Time: 180 ns  Iteration: 0  Instance: /tb_apb_master_slave
+# Break in Module tb_apb_master_slave at /u/ajalgar/ECE571-F24/extra_work/tb_apb.sv line 73
+quit -sim
+# End time: 22:44:41 on Dec 04,2024, Elapsed time: 0:04:00
+# Errors: 0, Warnings: 3
+vopt work.tb_apb -o tb_apb_master_slave_opt
+# QuestaSim-64 vopt 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 22:44:58 on Dec 04,2024
+# vopt -reportprogress 300 work.tb_apb -o tb_apb_master_slave_opt 
+# 
+# Top level modules:
+# 	tb_apb
+# 
+# Analyzing design...
+# -- Loading module tb_apb
+# ** Error: /u/ajalgar/ECE571-F24/extra_work/tb_apb.sv(11): Module 'apb_top' is not defined.
+#  For instance 'uut' at path 'tb_apb'
+# Optimization failed
+# End time: 22:44:58 on Dec 04,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vopt failed.
+vopt work.tb_apb_master_slave +acc -o tb_apb_master_slave_opt
+# QuestaSim-64 vopt 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 22:45:20 on Dec 04,2024
+# vopt -reportprogress 300 work.tb_apb_master_slave "+acc" -o tb_apb_master_slave_opt 
+# 
+# Top level modules:
+# 	tb_apb_master_slave
+# 
+# Analyzing design...
+# -- Loading module tb_apb_master_slave
+# -- Loading interface apb_interface
+# -- Loading module apb_master_slave_top
+# -- Loading module apb_add_master
+# -- Loading module apb_add_slave
+# Optimizing 7 design-units (inlining 0/6 module instances):
+# -- Optimizing module apb_add_master(fast)
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# -- Optimizing module tb_apb_master_slave(fast)
+# -- Optimizing module apb_add_slave(fast)
+# -- Optimizing module apb_master_slave_top(fast)
+# -- Optimizing interface apb_interface(fast__1)
+# -- Optimizing interface apb_interface(fast__2)
+# -- Optimizing interface apb_interface(fast)
+# Optimized design name is tb_apb_master_slave_opt
+# End time: 22:45:21 on Dec 04,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim -voptargs=+acc work.tb_apb_master_slave
+# vsim -voptargs="+acc" work.tb_apb_master_slave 
+# Start time: 22:45:30 on Dec 04,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb_apb_master_slave(fast)
+# Loading work.apb_interface(fast__1)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_interface(fast__2)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/pclk
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/preset_n
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/add_i
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/external_wdata_i
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/ready_o
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/rdata_o
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/apb_intf/psel
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/apb_intf/penable
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/apb_intf/paddr
+run -all
+# Performing WRITE operation...
+# Write Data: 0x1234abcd
+# Performing READ operation...
+# Slave: Write operation. Address: 0x0000a000, Data: 0x1234abcd
 # Read Data: 0x00000000
-# TIME:                  300
-# Slave: Read operation. Address: 0x0000a000, Data: 0x5678ef01
-# Read Data: 0x5678ef01
-# ** Note: $stop    : /u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv(84)
-#    Time: 330 ns  Iteration: 1  Instance: /tb_apb_master_slave
-# Break in Module tb_apb_master_slave at /u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv line 84
-exit
-# End time: 21:42:01 on Dec 04,2024, Elapsed time: 0:00:44
-# Errors: 0, Warnings: 8
+# Performing READ operation...
+# Read Data: 0x1234abcd
+# ** Note: $stop    : /u/ajalgar/ECE571-F24/extra_work/tb_apb.sv(73)
+#    Time: 180 ns  Iteration: 0  Instance: /tb_apb_master_slave
+# Break in Module tb_apb_master_slave at /u/ajalgar/ECE571-F24/extra_work/tb_apb.sv line 73
+history
+#      1  gvim apb.sv
+#      2  gvim tb_apb.sv
+#      3  vopt work.tb_apb -o tb_apb_master_slave_opt
+#      4  vopt work.tb_apb_master_slave -o tb_apb_master_slave_opt
+#      5  vsim work.tb_apb_master_slave -voptargs=+acc
+#      6  add wave -position insertpoint sim:/tb_apb_master_slave/*
+#      7  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/uut/u_master/pwrite_q
+#      8  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/uut/apb_intf/psel
+#      9  run -all
+#     10  quit -sim
+#     11  vopt work.tb_apb -o tb_apb_master_slave_opt
+#     12  vopt work.tb_apb_master_slave +acc -o tb_apb_master_slave_opt
+#     13  vsim -voptargs=+acc work.tb_apb_master_slave
+#     14  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/pclk
+#     15  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/preset_n
+#     16  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/add_i
+#     17  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/external_wdata_i
+#     18  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/ready_o
+#     19  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/rdata_o
+#     20  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/apb_intf/psel
+#     21  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/apb_intf/penable
+#     22  add wave -position insertpoint  \
+# 	sim:/tb_apb_master_slave/apb_intf/paddr
+#     23  run -all
+#     24  history
+vopt work.tb_apb_master_slave -o tb_apb_master_slave_opt
+# QuestaSim-64 vopt 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 22:49:42 on Dec 04,2024
+# vopt -reportprogress 300 work.tb_apb_master_slave -o tb_apb_master_slave_opt 
+# 
+# Top level modules:
+# 	tb_apb_master_slave
+# 
+# Analyzing design...
+# -- Loading module tb_apb_master_slave
+# -- Loading interface apb_interface
+# -- Loading module apb_master_slave_top
+# -- Loading module apb_add_master
+# -- Loading module apb_add_slave
+# Optimizing 7 design-units (inlining 5/6 module instances):
+# -- Inlining interface apb_interface(fast__1)
+# -- Inlining interface apb_interface(fast__2)
+# -- Inlining module apb_add_master(fast)
+# -- Inlining module apb_add_slave(fast)
+# -- Inlining module apb_master_slave_top(fast)
+# -- Optimizing module tb_apb_master_slave(fast)
+# -- Optimizing interface apb_interface(fast)
+# Optimized design name is tb_apb_master_slave_opt
+# End time: 22:49:43 on Dec 04,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+!5
+# vsim work.tb_apb_master_slave -voptargs=+acc
+# End time: 22:49:52 on Dec 04,2024, Elapsed time: 0:04:22
+# Errors: 0, Warnings: 1
+# vsim work.tb_apb_master_slave -voptargs="+acc" 
+# Start time: 22:49:52 on Dec 04,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb_apb_master_slave(fast)
+# Loading work.apb_interface(fast__1)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_interface(fast__2)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/apb_intf/pclk
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/apb_intf/preset_n
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/apb_intf/psel
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/apb_intf/penable
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/apb_intf/paddr
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/uut/add_i
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/uut/external_wdata_i
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/uut/rdata_o
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/uut/ready_o
+run -all
+# Performing WRITE operation...
+# Write Data: 0x1234abcd
+# Performing READ operation...
+# Slave: Write operation. Address: 0x0000a000, Data: 0x1234abcd
+# Read Data: 0x00000000
+# Performing READ operation...
+# Read Data: 0x1234abcd
+# ** Note: $stop    : /u/ajalgar/ECE571-F24/extra_work/tb_apb.sv(73)
+#    Time: 180 ns  Iteration: 0  Instance: /tb_apb_master_slave
+# Break in Module tb_apb_master_slave at /u/ajalgar/ECE571-F24/extra_work/tb_apb.sv line 73
+quit -sim
+# End time: 22:51:38 on Dec 04,2024, Elapsed time: 0:01:46
+# Errors: 0, Warnings: 1
+vsim work.apb_add_slave
+# vsim work.apb_add_slave 
+# Start time: 23:00:30 on Dec 04,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.apb_add_slave(fast)
+# ** Fatal: (vsim-3695) The interface port 'apb_intf' must be passed an actual interface.
+#    Time: 0 ns  Iteration: 0  Instance: /apb_add_slave File: /u/ajalgar/ECE571-F24/extra_work/apb.sv Line: 104
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.apb_add_slave
+# End time: 23:00:32 on Dec 04,2024, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 1
+# vsim work.apb_add_slave 
+# Start time: 23:00:32 on Dec 04,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.apb_add_slave(fast)
+# ** Fatal: (vsim-3695) The interface port 'apb_intf' must be passed an actual interface.
+#    Time: 0 ns  Iteration: 0  Instance: /apb_add_slave File: /u/ajalgar/ECE571-F24/extra_work/apb.sv Line: 104
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.apb_add_slave
+# End time: 23:00:32 on Dec 04,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# vsim work.apb_add_slave 
+# Start time: 23:00:33 on Dec 04,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.apb_add_slave(fast)
+# ** Fatal: (vsim-3695) The interface port 'apb_intf' must be passed an actual interface.
+#    Time: 0 ns  Iteration: 0  Instance: /apb_add_slave File: /u/ajalgar/ECE571-F24/extra_work/apb.sv Line: 104
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.apb_add_slave
+# End time: 23:00:33 on Dec 04,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# vsim work.apb_add_slave 
+# Start time: 23:00:33 on Dec 04,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.apb_add_slave(fast)
+# ** Fatal: (vsim-3695) The interface port 'apb_intf' must be passed an actual interface.
+#    Time: 0 ns  Iteration: 0  Instance: /apb_add_slave File: /u/ajalgar/ECE571-F24/extra_work/apb.sv Line: 104
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 23:00:34 on Dec 04,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 1
+quit -sim
+quit

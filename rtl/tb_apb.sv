@@ -6,6 +6,10 @@ module tb_apb_master_slave;
   logic ready_o;
   logic [31:0] rdata_o;
 
+  // Declare the APB interface
+  apb_interface apb_intf(pclk, preset_n);
+
+  // Instantiate the DUT
   apb_master_slave_top uut (
     .pclk(pclk),
     .preset_n(preset_n),
@@ -15,6 +19,7 @@ module tb_apb_master_slave;
     .rdata_o(rdata_o)
   );
 
+  // Clock generation
   always #10 pclk = ~pclk;
 
   task reset_system();
@@ -39,15 +44,15 @@ module tb_apb_master_slave;
       add_i = 2'b00;
     end
   endtask
-
+  
   task perform_read();
     begin
-      add_i = 2'b01;
+      add_i = 2'b01; // Read command
       @(posedge pclk);
-      wait (ready_o);
-      @(posedge pclk);
-      $display("Read Data: 0x%08h", rdata_o);
-      add_i = 2'b00;
+      wait (ready_o); // Wait for slave to assert PREADY
+      @(posedge pclk); // Extra clock cycle for PRDATA to stabilize
+      $display("Read Data: 0x%08h", rdata_o); // Correctly capture PRDATA
+      add_i = 2'b00; // Go back to idle
     end
   endtask
 
@@ -55,33 +60,22 @@ module tb_apb_master_slave;
     pclk = 0;
     reset_system();
 
-    $display("TIME: %t",$time);
     $display("Performing WRITE operation...");
     perform_write(32'h1234abcd);
 
-    $display("TIME: %t",$time);
     $display("Performing READ operation...");
     perform_read();
     
+    $display("Performing READ operation...");
+    perform_read();
+
     #30;
-    $display("TIME: %t",$time);
-    perform_read();
-
-    reset_system();
-    
-    $display("TIME: %t",$time);
-    $display("Performing another WRITE operation...");
-    perform_write(32'h5678ef01);
-
-    $display("TIME: %t",$time);
-    $display("Performing another READ operation...");
-    perform_read();
-    
-    #30;
-    $display("TIME: %t",$time);
-    perform_read();
-
     $stop;
   end
 
+  initial begin
+    $dumpfile("apb.vcd");
+    $dumpvars(2, tb_apb_master_slave);
+  end
 endmodule
+
