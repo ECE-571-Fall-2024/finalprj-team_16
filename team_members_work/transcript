@@ -1,0 +1,260 @@
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Project file /u/gowthami/ECE571-F24/finalprj-team_16/sim/apb.mpf was not found.
+# Unable to open project.
+# Loading project sample
+# Compile of apb_package.sv was successful.
+# Compile of apb.sv failed with 1 errors.
+# Compile of apb.sv was successful.
+# Compile of tb_apb.sv failed with 1 errors.
+# Compile of tb_apb.sv was successful.
+vopt work.tb_apb -o tb_opt
+# QuestaSim-64 vopt 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 23:32:25 on Dec 05,2024
+# vopt -reportprogress 300 work.tb_apb -o tb_opt 
+# 
+# Top level modules:
+# 	tb_apb
+# 
+# Analyzing design...
+# -- Loading module tb_apb
+# -- Loading module apb_master_slave_top
+# -- Loading module apb_add_master
+# -- Importing package apb_pkg
+# -- Loading module apb_add_slave
+# Optimizing 5 design-units (inlining 3/4 module instances):
+# -- Optimizing package apb_pkg(fast)
+# -- Inlining module apb_add_master(fast)
+# -- Inlining module apb_add_slave(fast)
+# -- Inlining module apb_master_slave_top(fast)
+# -- Optimizing module tb_apb(fast)
+# Optimized design name is tb_opt
+# End time: 23:32:26 on Dec 05,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.tb_apb -voptargs=+acc
+# vsim work.tb_apb -voptargs="+acc" 
+# Start time: 23:32:39 on Dec 05,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position insertpoint sim:/tb_apb/*
+add wave -position insertpoint  \
+sim:/tb_apb/uut/paddr
+run -all
+# Performing WRITE operation...
+# Time:                   80, Write Data: 0x1234abcd
+# Performing READ operation...
+# Time:                  110, Read Data: 0x00000000
+# Performing another READ operation...
+# Time:                  150, Read Data: 0x00000000
+# Performing another WRITE operation...
+# Time:                  240, Write Data: 0x5678ef01
+# Performing another READ operation...
+# Time:                  270, Read Data: 0x00000000
+# Performing final READ operation...
+# Time:                  310, Read Data: 0x00000000
+# ** Note: $stop    : /u/gowthami/ECE571-F24/finalprj-team_16/team_members_work/tb_apb.sv(99)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/gowthami/ECE571-F24/finalprj-team_16/team_members_work/tb_apb.sv line 99
+quit -sim
+# End time: 23:34:48 on Dec 05,2024, Elapsed time: 0:02:09
+# Errors: 0, Warnings: 10
+# Compile of apb_package.sv was successful.
+# Compile of apb.sv failed with 1 errors.
+# Compile of apb.sv was successful.
+# Compile of tb_apb.sv was successful.
+vopt work.tb_apb +acc -o tb1_opt
+# QuestaSim-64 vopt 2024.2 Compiler 2024.05 May 20 2024
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# Start time: 23:42:03 on Dec 05,2024
+# vopt -reportprogress 300 work.tb_apb "+acc" -o tb1_opt 
+# 
+# Top level modules:
+# 	tb_apb
+# 
+# Analyzing design...
+# -- Loading module tb_apb
+# -- Loading module apb_master_slave_top
+# -- Loading module apb_add_master
+# -- Importing package apb_pkg
+# -- Loading module apb_add_slave
+# Optimizing 5 design-units (inlining 0/4 module instances):
+# -- Optimizing package apb_pkg(fast)
+# -- Optimizing module apb_add_master(fast)
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# -- Optimizing module tb_apb(fast)
+# -- Optimizing module apb_add_slave(fast)
+# -- Optimizing module apb_master_slave_top(fast)
+# Optimized design name is tb1_opt
+# End time: 23:42:04 on Dec 05,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 23:42:14 on Dec 05,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position insertpoint sim:/tb_apb/*
+run -all
+# Performing WRITE operation...
+# Time:                   80, Write Data: 0x1234abcd
+# Performing READ operation...
+# Time:                  110, Read Data: 0x00000000
+# Performing another WRITE operation...
+# Time:                  200, Write Data: 0x5678ef01
+# Performing another READ operation...
+# Time:                  230, Read Data: 0x00000000
+# ** Note: $stop    : /u/gowthami/ECE571-F24/finalprj-team_16/team_members_work/tb_apb.sv(80)
+#    Time: 230 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/gowthami/ECE571-F24/finalprj-team_16/team_members_work/tb_apb.sv line 80
+quit -sim
+# End time: 23:44:49 on Dec 05,2024, Elapsed time: 0:02:35
+# Errors: 0, Warnings: 6
+# Compile of apb_package.sv was successful.
+# Compile of apb.sv failed with 1 errors.
+# Compile of tb_apb.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of apb.sv was successful.
+vopt work.tb_apb +acc -o tb3_opt
+# QuestaSim-64 vopt 2024.2 Compiler 2024.05 May 20 2024
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# Start time: 23:45:52 on Dec 05,2024
+# vopt -reportprogress 300 work.tb_apb "+acc" -o tb3_opt 
+# 
+# Top level modules:
+# 	tb_apb
+# 
+# Analyzing design...
+# -- Loading module tb_apb
+# -- Loading module apb_master_slave_top
+# -- Loading module apb_add_master
+# -- Importing package apb_pkg
+# -- Loading module apb_add_slave
+# Optimizing 5 design-units (inlining 0/4 module instances):
+# -- Optimizing package apb_pkg(fast)
+# -- Optimizing module apb_add_master(fast)
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# -- Optimizing module tb_apb(fast)
+# -- Optimizing module apb_add_slave(fast)
+# -- Optimizing module apb_master_slave_top(fast)
+# Optimized design name is tb3_opt
+# End time: 23:45:53 on Dec 05,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 23:46:04 on Dec 05,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position insertpoint sim:/tb_apb/*
+run -all
+# Performing WRITE operation...
+# Time:                   80, Write Data: 0x1234abcd
+# Performing READ operation...
+# Time:                  110, Read Data: 0x00000000
+# Performing READ operation...
+# Time:                  150, Read Data: 0x00000000
+# Performing another WRITE operation...
+# Time:                  240, Write Data: 0x5678ef01
+# Performing another READ operation...
+# Time:                  270, Read Data: 0x00000000
+# Performing READ operation...
+# Time:                  310, Read Data: 0x00000000
+# ** Note: $stop    : /u/gowthami/ECE571-F24/finalprj-team_16/team_members_work/tb_apb.sv(86)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/gowthami/ECE571-F24/finalprj-team_16/team_members_work/tb_apb.sv line 86
+# Causality operation skipped due to absence of debug database file
+quit -sim
+# End time: 23:52:35 on Dec 05,2024, Elapsed time: 0:06:31
+# Errors: 0, Warnings: 5
+# Compile of apb_package.sv was successful.
+# Compile of apb.sv was successful.
+# Compile of tb_apb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vopt work.tb_apb +acc -o tb3_opt
+# QuestaSim-64 vopt 2024.2 Compiler 2024.05 May 20 2024
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# Start time: 23:53:19 on Dec 05,2024
+# vopt -reportprogress 300 work.tb_apb "+acc" -o tb3_opt 
+# 
+# Top level modules:
+# 	tb_apb
+# 
+# Analyzing design...
+# -- Loading module tb_apb
+# -- Loading module apb_master_slave_top
+# -- Loading module apb_add_master
+# -- Importing package apb_pkg
+# -- Loading module apb_add_slave
+# Incremental compilation check found no design-units (out of 5) may be reused.
+# Optimizing 5 design-units (inlining 0/4 module instances):
+# -- Optimizing package apb_pkg(fast)
+# -- Optimizing module tb_apb(fast)
+# -- Optimizing module apb_add_master(fast)
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# -- Optimizing module apb_add_slave(fast)
+# -- Optimizing module apb_master_slave_top(fast)
+# Optimized design name is tb3_opt
+# End time: 23:53:20 on Dec 05,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 23:53:28 on Dec 05,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position insertpoint sim:/tb_apb/*
+run -all
+# Performing WRITE operation...
+# Time:                   80, Write Data: 0x1234abcd
+# Performing READ operation...
+# Time:                  110, Read Data: 0x00000000
+# Performing another WRITE operation...
+# Time:                  160, Write Data: 0x5678ef01
+# Performing another READ operation...
+# Time:                  210, Read Data: 0x1234abcd
+# ** Note: $stop    : /u/gowthami/ECE571-F24/finalprj-team_16/team_members_work/tb_apb.sv(78)
+#    Time: 210 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/gowthami/ECE571-F24/finalprj-team_16/team_members_work/tb_apb.sv line 78
+# End time: 00:04:47 on Dec 06,2024, Elapsed time: 0:11:19
+# Errors: 0, Warnings: 4
