@@ -1,0 +1,70 @@
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project package
+# reading /pkgs/mentor/questa/2024.2/questasim/linux_x86_64/../modelsim.ini
+# Loading project with_interface
+# Compile of apb.sv was successful.
+# Compile of apb_interface.sv was successful.
+# Compile of apb_master.sv was successful.
+# Compile of apb_pkg.sv was successful.
+# Compile of apb_slave.sv was successful.
+# Compile of apb_top.sv was successful with warnings.
+# Compile of tb_apb.sv was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_apb_master_slave
+# vsim -voptargs="+acc" work.tb_apb_master_slave 
+# Start time: 00:51:51 on Dec 06,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Warning: /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(17): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 8, found 6.
+# ** Warning: /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(17): (vopt-2718) [TFMPC] - Missing connection for port 'penable_o'.
+# ** Warning: /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(17): (vopt-2718) [TFMPC] - Missing connection for port 'psel_o'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
+# Loading sv_std.std
+# Loading work.apb_pkg(fast)
+# Loading work.tb_apb_master_slave(fast)
+# Loading work.apb_interface(fast__1)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'apb_intf'.  Expected 9, found 2.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_apb_master_slave/apb_intf File: /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv Line: 14
+# ** Warning: (vsim-3722) /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(14): [TFMPC] - Missing connection for port 'psel'.
+# ** Warning: (vsim-3722) /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(14): [TFMPC] - Missing connection for port 'penable'.
+# ** Warning: (vsim-3722) /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(14): [TFMPC] - Missing connection for port 'pwrite'.
+# ** Warning: (vsim-3722) /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(14): [TFMPC] - Missing connection for port 'paddr'.
+# ** Warning: (vsim-3722) /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(14): [TFMPC] - Missing connection for port 'pwdata'.
+# ** Warning: (vsim-3722) /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(14): [TFMPC] - Missing connection for port 'prdata'.
+# ** Warning: (vsim-3722) /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(14): [TFMPC] - Missing connection for port 'pready'.
+add wave -position insertpoint  \
+sim:/tb_apb_master_slave/pclk \
+sim:/tb_apb_master_slave/preset_n \
+sim:/tb_apb_master_slave/add_i \
+sim:/tb_apb_master_slave/external_wdata_i \
+sim:/tb_apb_master_slave/ready_o \
+sim:/tb_apb_master_slave/rdata_o
+run -all
+# Performing WRITE operation...
+# Write Data: 0x1234abcd
+# Performing READ operation...
+# Read Data: 0x00000000
+# Performing READ operation...
+# Read Data: 0x00000000
+# ** Note: $stop    : /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv(77)
+#    Time: 180 ns  Iteration: 0  Instance: /tb_apb_master_slave
+# Break in Module tb_apb_master_slave at /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/with_interface/rtl/tb_apb.sv line 77
+# End time: 00:52:17 on Dec 06,2024, Elapsed time: 0:00:26
+# Errors: 0, Warnings: 17

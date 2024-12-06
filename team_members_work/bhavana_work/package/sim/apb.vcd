@@ -1,0 +1,386 @@
+$date
+	Thu Dec  5 23:23:36 2024
+$end
+$version
+	QuestaSim Version 2024.2
+$end
+$timescale
+	1ns
+$end
+
+$scope module tb_apb $end
+$var reg 1 ! pclk $end
+$var reg 1 " preset_n $end
+$var reg 2 # add_i [1:0] $end
+$var reg 32 $ external_wdata_i [31:0] $end
+$var reg 1 % ready_o $end
+$var reg 32 & rdata_o [31:0] $end
+$var reg 1 ' psel_o $end
+$var reg 1 ( penable_o $end
+
+$scope task reset_system $end
+$upscope $end
+
+$scope task perform_write $end
+$var reg 32 ) data [31:0] $end
+$upscope $end
+
+$scope task perform_read $end
+$upscope $end
+
+$scope module uut $end
+$var wire 1 * pclk $end
+$var wire 1 + preset_n $end
+$var wire 1 , add_i [1] $end
+$var wire 1 - add_i [0] $end
+$var wire 1 . external_wdata_i [31] $end
+$var wire 1 / external_wdata_i [30] $end
+$var wire 1 0 external_wdata_i [29] $end
+$var wire 1 1 external_wdata_i [28] $end
+$var wire 1 2 external_wdata_i [27] $end
+$var wire 1 3 external_wdata_i [26] $end
+$var wire 1 4 external_wdata_i [25] $end
+$var wire 1 5 external_wdata_i [24] $end
+$var wire 1 6 external_wdata_i [23] $end
+$var wire 1 7 external_wdata_i [22] $end
+$var wire 1 8 external_wdata_i [21] $end
+$var wire 1 9 external_wdata_i [20] $end
+$var wire 1 : external_wdata_i [19] $end
+$var wire 1 ; external_wdata_i [18] $end
+$var wire 1 < external_wdata_i [17] $end
+$var wire 1 = external_wdata_i [16] $end
+$var wire 1 > external_wdata_i [15] $end
+$var wire 1 ? external_wdata_i [14] $end
+$var wire 1 @ external_wdata_i [13] $end
+$var wire 1 A external_wdata_i [12] $end
+$var wire 1 B external_wdata_i [11] $end
+$var wire 1 C external_wdata_i [10] $end
+$var wire 1 D external_wdata_i [9] $end
+$var wire 1 E external_wdata_i [8] $end
+$var wire 1 F external_wdata_i [7] $end
+$var wire 1 G external_wdata_i [6] $end
+$var wire 1 H external_wdata_i [5] $end
+$var wire 1 I external_wdata_i [4] $end
+$var wire 1 J external_wdata_i [3] $end
+$var wire 1 K external_wdata_i [2] $end
+$var wire 1 L external_wdata_i [1] $end
+$var wire 1 M external_wdata_i [0] $end
+$var reg 1 N ready_o $end
+$var reg 32 O rdata_o [31:0] $end
+$var reg 1 P psel_o $end
+$var reg 1 Q penable_o $end
+$var reg 1 R psel $end
+$var reg 1 S penable $end
+$var reg 1 T pwrite $end
+$var reg 32 U paddr [31:0] $end
+$var reg 32 V pwdata [31:0] $end
+$var reg 32 W prdata [31:0] $end
+$var reg 1 X pready $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+b0 #
+b0 $
+0%
+b0 &
+0'
+0(
+0N
+b0 O
+0P
+0Q
+0R
+0S
+0T
+b0 U
+b0 V
+b0 W
+0X
+bx )
+0M
+0L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+$end
+#10
+1!
+1*
+#20
+0!
+0*
+1"
+1+
+#30
+1!
+1*
+#40
+0!
+0*
+b10010001101001010101111001101 )
+b10010001101001010101111001101 $
+b11 #
+1M
+1K
+1J
+1G
+1F
+1E
+1D
+1B
+1@
+1>
+1;
+19
+18
+14
+11
+b10010001101001010101111001101 V
+1-
+1,
+#50
+1!
+1*
+1R
+1T
+1P
+1'
+#60
+0!
+0*
+#70
+1!
+1*
+1S
+b1010000000000000 U
+1Q
+1(
+1X
+1N
+1%
+#80
+0!
+0*
+b0 #
+b1 #
+0,
+#90
+1!
+1*
+0S
+0R
+0P
+b0 U
+0Q
+0(
+0'
+0X
+0N
+0%
+#100
+0!
+0*
+#110
+1!
+1*
+b0 #
+b1 #
+1R
+0T
+1P
+1'
+#120
+0!
+0*
+#130
+1!
+1*
+1S
+b1010000000000000 U
+1Q
+1(
+1X
+1N
+1%
+#140
+0!
+0*
+#150
+1!
+1*
+b0 #
+0-
+0S
+0R
+0P
+b0 U
+0Q
+0(
+0'
+0X
+0N
+0%
+#160
+0!
+0*
+#170
+1!
+1*
+#180
+0"
+b0 $
+0!
+0M
+0K
+0J
+0G
+0F
+0E
+0D
+0B
+0@
+0>
+0;
+09
+08
+04
+01
+b0 V
+0+
+0*
+1"
+1+
+#190
+1!
+1*
+#200
+0!
+0*
+b1010110011110001110111100000001 )
+b1010110011110001110111100000001 $
+b11 #
+1M
+1E
+1D
+1C
+1B
+1@
+1?
+1>
+1:
+19
+18
+17
+14
+13
+11
+1/
+b1010110011110001110111100000001 V
+1-
+1,
+#210
+1!
+1*
+1R
+1T
+1P
+1'
+#220
+0!
+0*
+#230
+1!
+1*
+1S
+b1010000000000000 U
+1Q
+1(
+1X
+1N
+1%
+#240
+0!
+0*
+b0 #
+b1 #
+0,
+#250
+1!
+1*
+0S
+0R
+0P
+b0 U
+0Q
+0(
+0'
+0X
+0N
+0%
+#260
+0!
+0*
+#270
+1!
+1*
+b0 #
+b1 #
+1R
+0T
+1P
+1'
+#280
+0!
+0*
+#290
+1!
+1*
+1S
+b1010000000000000 U
+1Q
+1(
+1X
+1N
+1%
+#300
+0!
+0*
+#310
+1!
+1*
+b0 #

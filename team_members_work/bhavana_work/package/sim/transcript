@@ -56,3 +56,5 @@ run -all
 # ** Note: $stop    : /u/bhavanap/ECE571-2024/finalprj-team_16/team_members_work/bhavana_work/package/rtl/tb_apb.sv(91)
 #    Time: 310 ns  Iteration: 1  Instance: /tb_apb
 # Break in Module tb_apb at /u/bhavanap/ECE571-2024/finalprj-team_16/team_members_work/bhavana_work/package/rtl/tb_apb.sv line 91
+# End time: 23:30:17 on Dec 05,2024, Elapsed time: 0:08:29
+# Errors: 0, Warnings: 1
