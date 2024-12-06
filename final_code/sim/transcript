@@ -12,6 +12,7 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
+<<<<<<< HEAD
 # Loading project apb_final
 # Compile of apb_interface.sv was successful.
 # Compile of apb_master.sv was successful.
@@ -48,17 +49,54 @@ vsim work.tb_apb -voptargs=+acc
 # vsim work.tb_apb -voptargs="+acc" 
 # Start time: 12:39:52 on Dec 05,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+=======
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project interface_apb
+project open /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/sim/apb_protocol
+# reading /pkgs/mentor/questa/2024.2/questasim/linux_x86_64/../modelsim.ini
+# Loading project apb_protocol
+# Compile of apb.sv was successful.
+# Compile of tb_apb.sv was successful.
+# Compile of apb_pkg.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of apb.sv was successful.
+# Compile of tb_apb.sv was successful.
+# Compile of apb_pkg.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 03:03:36 on Dec 05,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 # Loading sv_std.std
 # Loading work.tb_apb(fast)
 # Loading work.apb_master_slave_top(fast)
 # Loading work.apb_pkg(fast)
 # Loading work.apb_add_master(fast)
 # Loading work.apb_add_slave(fast)
+<<<<<<< HEAD
 add wave -position insertpoint sim:/tb_apb/*
 add wave -position insertpoint  \
 sim:/tb_apb/uut/paddr
+=======
+add wave -position end  sim:/tb_apb/pclk
+add wave -position end  sim:/tb_apb/preset_n
+add wave -position end  sim:/tb_apb/add_i
+add wave -position end  sim:/tb_apb/external_wdata_i
+add wave -position end  sim:/tb_apb/ready_o
+add wave -position end  sim:/tb_apb/rdata_o
+add wave -position end  sim:/tb_apb/psel_o
+add wave -position end  sim:/tb_apb/penable_o
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 run -all
 # Performing WRITE operation...
+<<<<<<< HEAD
 # Write Data: 0x1234abcd
 # Performing READ operation...
 # Read Data: 0x00000000
@@ -273,3 +311,19 @@ quit -sim
 # End time: 13:13:10 on Dec 05,2024, Elapsed time: 0:19:07
 # Errors: 0, Warnings: 2
 quit
+=======
+# TIME:                   80
+# Performing READ operation...
+# TIME:                  140
+# TIME:                  170
+# Performing another WRITE operation...
+# TIME:                  200
+# Performing another READ operation...
+# TIME:                  260
+# ** Note: $stop    : /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv(85)
+#    Time: 290 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv line 85
+quit -sim
+# End time: 03:04:47 on Dec 05,2024, Elapsed time: 0:01:11
+# Errors: 0, Warnings: 4
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a

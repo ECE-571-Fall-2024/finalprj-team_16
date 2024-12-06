@@ -1,4 +1,8 @@
+`include "apb_pkg.sv"
+
 module tb_apb_master_slave;
+
+  import apb_pkg::*;
 
   logic pclk, preset_n;
   logic [1:0] add_i;
@@ -65,7 +69,11 @@ module tb_apb_master_slave;
 
     $display("Performing READ operation...");
     perform_read();
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
     $display("Performing READ operation...");
     perform_read();
 

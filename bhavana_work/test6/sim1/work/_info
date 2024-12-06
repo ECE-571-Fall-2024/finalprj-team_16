@@ -1,0 +1,179 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/sim
+T_opt
+!s110 1733398438
+VYk]36k4EGFJ9FUl7``hV93
+04 6 4 work tb_apb fast 0
+=1-5254006cf05e-67518fa5-c84b0-2bbb
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2024.2;79
+vapb_add_master
+Z2 2/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/tb_apb.sv
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 DXx4 work 7 apb_pkg 0 22 IhVU7@H8D[Sl5XcG=Q2@71
+Z5 !s110 1733398427
+!i10b 1
+!s100 HV3G7aEZ73zmWZgP=bDh32
+I0D>@ShLQ5gm@L8g>khE8^0
+S1
+Z6 d/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/sim1
+w1733398214
+8/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_master.sv
+F/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_master.sv
+!i122 9
+L0 6 63
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z9 !s108 1733398427.000000
+Z10 !s107 /u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_slave.sv|/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_interface.sv|/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_master.sv|/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_top.sv|/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_pkg.sv|/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/tb_apb.sv|
+Z11 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/tb_apb.sv|
+!i113 0
+Z12 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vapb_add_slave
+R2
+R3
+R4
+R5
+!i10b 1
+!s100 :@HVNI6^zAROZ5@][eekm0
+IRCI@Pd6H6ilY628I77eUV0
+S1
+R6
+w1733398271
+8/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_slave.sv
+F/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_slave.sv
+!i122 9
+L0 7 33
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+Yapb_interface
+R2
+R3
+R5
+!i10b 1
+!s100 b<F:h`=4Fk@XcfoznbWNA2
+IPiPF9YZY[E9>lJHGo@8Q:1
+S1
+R6
+w1733398115
+8/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_interface.sv
+F/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_interface.sv
+!i122 9
+L0 4 0
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+vapb_master_slave_top
+R2
+R3
+R5
+!i10b 1
+!s100 TC`l>[Nfz4l;BjWTZ[14T0
+IC__z[b<o8RJ``i?;k0Wf40
+S1
+R6
+w1733398346
+8/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_top.sv
+F/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_top.sv
+!i122 9
+L0 8 57
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+Xapb_pkg
+R2
+R3
+R5
+!i10b 1
+!s100 zS@i6>UnTG[1^ARJh6@P[1
+IIhVU7@H8D[Sl5XcG=Q2@71
+S1
+R6
+w1733397157
+8/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_pkg.sv
+F/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/apb_pkg.sv
+!i122 9
+L0 3 0
+VIhVU7@H8D[Sl5XcG=Q2@71
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+vtb_apb
+R2
+R3
+R5
+!i10b 1
+!s100 FNBHNZ]FdJgiHz9_7K^`J2
+IIV;T^;VC[R6?WEgF_D<>U1
+S1
+R6
+w1733398406
+8/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/tb_apb.sv
+F/u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/tb_apb.sv
+!i122 9
+L0 7 88
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1

@@ -1,3 +1,5 @@
+//TOP MODULE
+`include "apb_interface.sv"
 module apb_top (
   input logic pclk,
   input logic preset_n,
@@ -31,4 +33,5 @@ module apb_top (
   assign rdata_o = apb_intf.apb_signals.prdata;
 
 endmodule
+
 

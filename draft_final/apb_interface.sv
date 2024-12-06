@@ -5,6 +5,7 @@ interface apb_interface(
   input logic preset_n        // Active low reset signal
 );
   // Declare the APB control signals
+  
   logic psel;                 // Select signal
   logic penable;              // Enable signal
   logic pwrite;               // Write control signal

@@ -1,4 +1,14 @@
-/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv {1 {vlog -work work -vopt -sv -stats=none /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv
+/u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_slave.sv {0 {vlog -work work -vopt -sv -stats=none /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_slave.sv
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module apb_add_slave
+** Error: (vlog-13069) /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_slave.sv(2): near "apb_if": syntax error, unexpected IDENTIFIER, expecting ')'.
+
+} {4.0 5.0} {}} /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_master.sv {0 {vlog -work work -vopt -sv -stats=none /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_master.sv
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module apb_add_master
+** Error: (vlog-13069) /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb_master.sv(2): near "apb_if": syntax error, unexpected IDENTIFIER, expecting ')'.
+
+} {4.0 5.0} {}} /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv {1 {vlog -work work -vopt -sv -stats=none /u/gowthami/ECE571-F24/finalprj-team_16/rtl/apb.sv
 QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module apb_master_slave_top
 -- Compiling module apb_add_master
@@ -6,12 +16,5 @@ QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 
 Top level modules:
 	apb_master_slave_top
-
-} {} {}} /u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv {1 {vlog -work work -vopt -sv -stats=none /u/gowthami/ECE571-F24/finalprj-team_16/rtl/tb_apb.sv
-QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module tb_apb_master_slave
-
-Top level modules:
-	tb_apb_master_slave
 
 } {} {}}

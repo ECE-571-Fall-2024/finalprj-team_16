@@ -1,0 +1,22 @@
+package apb_pkg;
+
+  // APB operation type
+  typedef enum logic [1:0] {
+    APB_NOP  = 2'b00,
+    APB_READ = 2'b01,
+    APB_WRITE = 2'b11
+  } apb_op_t;
+
+  // APB transaction structure
+  typedef struct packed {
+    logic psel;
+    logic penable;
+    logic pwrite;
+    logic [31:0] paddr;
+    logic [31:0] pwdata;
+    logic [31:0] prdata;
+    logic pready;
+  } apb_trans_t;
+
+endpackage
+

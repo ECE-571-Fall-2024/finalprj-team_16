@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+module tb_apb;
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 
 `include "apb_pkg.sv"           // Include the package
 `include "apb_top.sv"           // Include the top-level module
@@ -43,8 +47,11 @@ module tb_apb;
       @(posedge pclk);
       wait (ready_o); // Wait for slave to assert PREADY
       @(negedge pclk);
+<<<<<<< HEAD
       $display("Time: %t, Write Data: 0x%08h", $time, data); // Display the data written
       add_i = 2'b00;  // Go back to idle after the transaction
+=======
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
     end
   endtask
   
@@ -52,15 +59,19 @@ module tb_apb;
     begin
       add_i = 2'b01; // Read command
       @(posedge pclk);
+<<<<<<< HEAD
       wait (ready_o); // Wait for slave to assert PREADY
       @(posedge pclk); // Extra clock cycle for PRDATA to stabilize
       $display("Time: %t, Read Data: 0x%08h", $time, rdata_o); // Display the data read
       add_i = 2'b00; // Go back to idle
+=======
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
     end
   endtask
 
   initial begin
     pclk = 0;
+
     reset_system();
 
     $display("Performing WRITE operation...");

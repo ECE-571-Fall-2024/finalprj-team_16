@@ -1,6 +1,7 @@
 m255
 K4
 z2
+<<<<<<< HEAD
 Z0 !s99 nomlopt
 R0
 R0
@@ -10,6 +11,15 @@ R0
 R0
 R0
 !s11f vlog 2021.3_1 2021.08, Aug 15 2021
+=======
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+!s11f vlog 2024.2 2024.05, May 20 2024
+R0
+R1
+R0
+R1
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 13
 !s112 1.1
 !i10d 8192
@@ -18,14 +28,27 @@ R0
 cModel Technology
 Z1 d/u/ajalgar/ECE571-F24/finalprj-team_16/draft_final
 T_opt
+<<<<<<< HEAD
 !s110 1733432044
 V5dMWb>a6oaPGNQ3fK:SR=3
 Z2 04 6 4 work tb_apb fast 0
 =1-525400b63b2a-675212eb-85100-38ac
 Z3 !s124 OEM100
+=======
+!s110 1733396617
+V7gHzOoPaS^PN@gL<fVec?0
+04 6 4 work tb_apb fast 0
+=1-5254006cf05e-67518888-b9656-3b92
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 o-quiet -auto_acc_if_foreign -work work +acc
 Z4 tCvgOpt 0
 n@_opt
+<<<<<<< HEAD
 Z5 OL;O;2021.3_1;73
 vapb_add_master
 Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
@@ -49,6 +72,32 @@ r1
 Z12 !s108 1733432025.000000
 Z13 !s107 /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_slave.sv|/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_interface.sv|/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_master.sv|/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv|/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_pkg.sv|/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv|
 Z14 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv|
+=======
+OL;O;2024.2;79
+vapb_add_master
+Z4 2/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb.sv
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z6 DXx4 work 7 apb_pkg 0 22 8`?eeCSG@V;CC=GAWfoN]3
+Z7 !s110 1733396608
+!i10b 1
+!s100 fz6Bmf@LUKAKZS5z2`Fah3
+I;SBEoEPYcM`Ek>WOW^FQA0
+S1
+R2
+Z8 w1733396440
+Z9 8/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb.sv
+Z10 F/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb.sv
+!i122 0
+L0 76 63
+Z11 VDg1SIo80bB@j0V0VzS_@n1
+Z12 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z13 !s108 1733396607.000000
+Z14 !s107 /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb_pkg.sv|/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb.sv|
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb.sv|
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 !i113 0
 Z15 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R4
@@ -57,8 +106,13 @@ R6
 R7
 R8
 !i10b 1
+<<<<<<< HEAD
 !s100 `[5j;HOO;DHkoW^GT`Jz51
 IA43:[^0<dHFz=G<84a_>:2
+=======
+!s100 Y^1K<NzIh_J7ckc]2N2>d1
+IRgL_BChG4]cnOX=ABnMnk2
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 S1
 R9
 w1733427688
@@ -67,6 +121,36 @@ F/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_slave.sv
 !i122 24
 L0 4 30
 R10
+<<<<<<< HEAD
+=======
+!i122 0
+L0 140 33
+R11
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+Yapb_interface
+R4
+R5
+R7
+!i10b 1
+!s100 b<F:h`=4Fk@XcfoznbWNA2
+ISCb_di:AOP77HO@;bGKFI1
+S1
+R2
+R8
+R9
+R10
+!i122 0
+L0 4 0
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 R11
 r1
 !s85 0
@@ -102,12 +186,24 @@ R14
 R15
 R4
 vapb_master_slave_top
+<<<<<<< HEAD
 R6
 R8
 !i10b 1
 !s100 K7`AB7o<bGFLPmZd2`KXG1
 IBeKbeaMD8F0bOZf]S4AVL3
 S1
+=======
+R4
+R5
+R7
+!i10b 1
+!s100 J45fXc=laCV44UCZm]k=R0
+IZRL^9_?9`^QBA2iCZHZES1
+S1
+R2
+R8
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 R9
 w1733427705
 8/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv
@@ -115,17 +211,26 @@ F/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/apb_top.sv
 !i122 24
 L0 6 50
 R10
+<<<<<<< HEAD
+=======
+!i122 0
+L0 18 57
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 R11
 r1
 !s85 0
 31
+<<<<<<< HEAD
 R12
+=======
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 R13
 R14
 !i113 0
 R15
 R4
 Xapb_pkg
+<<<<<<< HEAD
 R6
 R8
 !i10b 1
@@ -146,6 +251,29 @@ r1
 R12
 R13
 R14
+=======
+2/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb_pkg.sv
+R5
+R7
+!i10b 1
+!s100 EYTFA51gF2HF[cE6?3K5C1
+I8`?eeCSG@V;CC=GAWfoN]3
+S1
+R2
+w1733396471
+8/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb_pkg.sv
+F/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb_pkg.sv
+!i122 2
+L0 1 0
+V8`?eeCSG@V;CC=GAWfoN]3
+R12
+r1
+!s85 0
+31
+Z17 !s108 1733396608.000000
+!s107 /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/apb_pkg.sv|
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 !i113 0
 R15
 R4
@@ -154,6 +282,7 @@ Ttb1_opt
 VbBzS^5gCAIKoYoh_eg;ji0
 R2
 R3
+<<<<<<< HEAD
 o+acc
 R4
 ntb1_opt
@@ -173,13 +302,35 @@ F/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/rtl/tb_apb.sv
 !i122 24
 L0 6 84
 R10
+=======
+vtb_apb
+2/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv
+R5
+R7
+!i10b 1
+!s100 jYl=UkJE_lXkYf2lElXJk2
+IBj2;gzh:64@l>454UMG=_1
+S1
+R2
+w1733396497
+8/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv
+F/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv
+!i122 1
+L0 1 88
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 R11
 r1
 !s85 0
 31
+<<<<<<< HEAD
 R12
 R13
 R14
+=======
+R17
+!s107 /u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/bhavanap/ECE571-2024/finalprj-team_16/final_code/rtl/tb_apb.sv|
+>>>>>>> 99639af3eea546cdca21f90d85c710362b87ba1a
 !i113 0
 R15
 R4

@@ -1,0 +1,67 @@
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project apb_protocol
+# reading /pkgs/mentor/questa/2024.2/questasim/linux_x86_64/../modelsim.ini
+# Loading project spliting
+# Compile of apb_master.sv failed with 2 errors.
+# Compile of apb_pkg.sv was successful.
+# Compile of apb_slave.sv was successful.
+# Compile of apb_top.sv failed with 2 errors.
+# Compile of tb_apb.sv failed with 2 errors.
+# 5 compiles, 3 failed with 6 errors.
+# Compile of apb_master.sv was successful with warnings.
+# Compile of apb_pkg.sv was successful.
+# Compile of apb_slave.sv was successful with warnings.
+# Compile of apb_top.sv was successful with warnings.
+# Compile of tb_apb.sv was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 03:33:57 on Dec 05,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position end  sim:/tb_apb/pclk
+add wave -position end  sim:/tb_apb/preset_n
+add wave -position end  sim:/tb_apb/add_i
+add wave -position end  sim:/tb_apb/external_wdata_i
+add wave -position end  sim:/tb_apb/ready_o
+add wave -position end  sim:/tb_apb/rdata_o
+add wave -position end  sim:/tb_apb/psel_o
+add wave -position end  sim:/tb_apb/penable_o
+run -all
+# TIME:                   40
+# Performing WRITE operation...
+# TIME:                   80
+# Performing READ operation...
+# TIME:                  140
+# TIME:                  170
+# Performing another WRITE operation...
+# TIME:                  200
+# Performing another READ operation...
+# TIME:                  260
+# ** Note: $stop    : /u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/tb_apb.sv(91)
+#    Time: 290 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/rtl1/tb_apb.sv line 91
+quit -sim
+# End time: 03:36:47 on Dec 05,2024, Elapsed time: 0:02:50
+# Errors: 0, Warnings: 8

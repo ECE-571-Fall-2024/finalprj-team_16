@@ -1,8 +1,13 @@
+//MASTER MODULE
+`include "apb_interface.sv"
+
 module apb_master (
   input logic [1:0] add_i,            // 2'b00 - NOP, 2'b01 - READ, 2'b11 - WRITE
   input logic [31:0] external_wdata_i,
-  input apb_interface apb_intf        // Correct interface instantiation
+  apb_interface apb_intf        // Correct interface instantiation
 );
+
+   
 
   typedef enum logic[1:0] {ST_IDLE, ST_SETUP, ST_ACCESS} apb_state_t;
   
@@ -10,8 +15,8 @@ module apb_master (
   logic nxt_pwrite, pwrite_q;
   logic [31:0] nxt_rdata, rdata_q;
 
-  always_ff @(posedge apb_intf.apb_signals.pclk or negedge apb_intf.apb_signals.preset_n) begin
-    if (!apb_intf.apb_signals.preset_n) begin
+  always_ff @(posedge apb_intf.pclk or negedge apb_intf.preset_n) begin
+    if (!apb_intf.preset_n) begin
       state_q <= ST_IDLE;
       pwrite_q <= 0;
       rdata_q <= 32'h0;
@@ -52,4 +57,6 @@ module apb_master (
   assign apb_intf.apb_signals.pwdata = external_wdata_i;
 
 endmodule
+
+
 
