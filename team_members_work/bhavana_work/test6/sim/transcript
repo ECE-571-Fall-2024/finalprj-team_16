@@ -1,0 +1,91 @@
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Project file /u/bhavanap/ECE571-2024/finalprj-team_16/bhavana_work/test6/sim/interface_apb.mpf was not found.
+# Unable to open project.
+# Loading project packages
+# Compile of apb.sv was successful.
+# Compile of apb_pkg.sv was successful.
+# Compile of tb_apb.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 22:45:56 on Dec 05,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+quit -sim
+# End time: 22:46:53 on Dec 05,2024, Elapsed time: 0:00:57
+# Errors: 0, Warnings: 6
+vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 22:46:59 on Dec 05,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+quit -sim
+# End time: 22:47:21 on Dec 05,2024, Elapsed time: 0:00:22
+# Errors: 0, Warnings: 1
+# Compile of apb.sv was successful.
+# Compile of apb_pkg.sv was successful.
+# Compile of tb_apb.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 22:47:54 on Dec 05,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position insertpoint  \
+sim:/tb_apb/pclk \
+sim:/tb_apb/preset_n \
+sim:/tb_apb/add_i \
+sim:/tb_apb/external_wdata_i \
+sim:/tb_apb/ready_o \
+sim:/tb_apb/rdata_o \
+sim:/tb_apb/psel_o \
+sim:/tb_apb/penable_o
+run -all
+# TIME:                   40
+# Performing WRITE operation...
+# TIME:                   80
+# Performing READ operation...
+# TIME:                  140
+# TIME:                  170
+# Performing another WRITE operation...
+# TIME:                  200
+# Performing another READ operation...
+# TIME:                  260
+# ** Note: $stop    : /u/bhavanap/ECE571-2024/finalprj-team_16/team_members_work/bhavana_work/test6/rtl/tb_apb.sv(85)
+#    Time: 290 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/bhavanap/ECE571-2024/finalprj-team_16/team_members_work/bhavana_work/test6/rtl/tb_apb.sv line 85
+# Causality operation skipped due to absence of debug database file
+quit -sim
+# End time: 22:50:01 on Dec 05,2024, Elapsed time: 0:02:07
+# Errors: 0, Warnings: 2
