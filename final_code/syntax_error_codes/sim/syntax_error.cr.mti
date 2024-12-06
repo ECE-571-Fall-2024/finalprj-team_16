@@ -1,0 +1,39 @@
+/u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_top.sv {1 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_top.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling module apb_top
+
+Top level modules:
+	apb_top
+
+} {} {}} /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_slave.sv {0 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_slave.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling module apb_slave
+** Error: (vlog-13069) /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_slave.sv(2): near "apb_intf": syntax error, unexpected IDENTIFIER, expecting ')'.
+
+} {4.0 5.0} {}} /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_master.sv {0 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_master.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling module apb_master
+** Error: (vlog-13069) /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_master.sv(4): near "apb_intf": syntax error, unexpected IDENTIFIER, expecting ')'.
+
+} {4.0 5.0} {}} /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_interface.sv {1 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_interface.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling interface apb_interface
+
+Top level modules:
+	--none--
+
+} {} {}} /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/tb_apb.sv {1 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/tb_apb.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling module tb_apb
+
+Top level modules:
+	tb_apb
+
+} {} {}} /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_pkg.sv {1 {vlog -work work -vopt -sv -stats=none /u/ajalgar/ECE571-F24/finalprj-team_16/final_code/syntax_error_codes/apb_pkg.sv
+QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+-- Compiling package apb_pkg
+
+Top level modules:
+	--none--
+
+} {} {}}
