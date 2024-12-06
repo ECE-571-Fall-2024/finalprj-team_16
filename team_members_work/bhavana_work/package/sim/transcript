@@ -1,0 +1,58 @@
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project package
+project open /u/bhavanap/ECE571-2024/finalprj-team_16/team_members_work/bhavana_work/package/sim/package
+# Compile of apb.sv was successful.
+# Compile of apb_pkg.sv was successful.
+# Compile of tb_apb.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_apb
+# vsim -voptargs="+acc" work.tb_apb 
+# Start time: 23:21:48 on Dec 05,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_apb(fast)
+# Loading work.apb_master_slave_top(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.apb_add_master(fast)
+# Loading work.apb_add_slave(fast)
+add wave -position insertpoint  \
+sim:/tb_apb/pclk \
+sim:/tb_apb/preset_n \
+sim:/tb_apb/add_i \
+sim:/tb_apb/external_wdata_i \
+sim:/tb_apb/ready_o \
+sim:/tb_apb/rdata_o \
+sim:/tb_apb/psel_o \
+sim:/tb_apb/penable_o
+run -all
+# Performing WRITE operation...
+# Time:                   80, Write Data: 0x1234abcd
+# Performing READ operation...
+# Time:                  110, Read Data: 0x00000000
+# Performing another READ operation...
+# Time:                  150, Read Data: 0x00000000
+# Performing another WRITE operation...
+# Time:                  240, Write Data: 0x5678ef01
+# Performing another READ operation...
+# Time:                  270, Read Data: 0x00000000
+# Performing final READ operation...
+# Time:                  310, Read Data: 0x00000000
+# ** Note: $stop    : /u/bhavanap/ECE571-2024/finalprj-team_16/team_members_work/bhavana_work/package/rtl/tb_apb.sv(91)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_apb
+# Break in Module tb_apb at /u/bhavanap/ECE571-2024/finalprj-team_16/team_members_work/bhavana_work/package/rtl/tb_apb.sv line 91

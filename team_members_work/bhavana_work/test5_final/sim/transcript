@@ -12,13 +12,13 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# Loading project final_apb
+# Loading project Final_working_test
 # Compile of apb.sv was successful.
 # Compile of tb_apb.sv was successful.
 # 2 compiles, 0 failed with no errors.
 vsim -voptargs=+acc work.tb_apb_master_slave
 # vsim -voptargs="+acc" work.tb_apb_master_slave 
-# Start time: 21:32:18 on Dec 03,2024
+# Start time: 23:04:00 on Dec 05,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vopt-143) Recognized 1 FSM in module "apb_add_master(fast)".
@@ -55,8 +55,8 @@ run -all
 # TIME:                  300
 # Slave: Read operation. Address: 0x0000a000, Data: 0x5678ef01
 # Read Data: 0x5678ef01
-# ** Note: $stop    : /u/bhavanap/ECE571-2024/apb_project/test5_final/rtl/tb_apb.sv(84)
+# ** Note: $stop    : /u/bhavanap/ECE571-2024/finalprj-team_16/team_members_work/bhavana_work/test5_final/rtl/tb_apb.sv(84)
 #    Time: 330 ns  Iteration: 1  Instance: /tb_apb_master_slave
-# Break in Module tb_apb_master_slave at /u/bhavanap/ECE571-2024/apb_project/test5_final/rtl/tb_apb.sv line 84
-# End time: 21:02:40 on Dec 04,2024, Elapsed time: 23:30:22
-# Errors: 0, Warnings: 3
+# Break in Module tb_apb_master_slave at /u/bhavanap/ECE571-2024/finalprj-team_16/team_members_work/bhavana_work/test5_final/rtl/tb_apb.sv line 84
+# End time: 23:04:40 on Dec 05,2024, Elapsed time: 0:00:40
+# Errors: 0, Warnings: 6
